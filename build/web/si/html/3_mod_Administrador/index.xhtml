@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | Inicio</title>
+	<h:outputStylesheet library="css" name="styles1a.css" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+        <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+        <h:outputScript library="js" name="jquery-3.4.1.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="caja">
+                <div class="barraprin">
+                    <div class="logo"></div>
+                    <div class="logo1">
+                        <h:graphicImage value="#{resource['/img/Inicio/PRIN1.jpg']}" class="img-fluid" title="Logo empresa" alt="Responsive image" />
+                    </div>
+                    <div class="logo"></div>
+                </div>
+                <div class="cajabar">
+                    <div class="cajabar1">
+                        <nav class="navbar-center">
+                            <div class="navega">
+                                <ul>
+                                    <li><a class="inici"><h:commandButton value="Inicio" action="#{user.navU.ahome()}" class="btn btn-sm btn-block text-white" /></a></li>
+                                    <li><a class=""><h:commandButton value="¿Quiénes somos?" action="#{user.navU.aabout()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Reportes" action="#{user.report.reports()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Ventas" action="#{sale.buy.sales()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Inventarios" action="#{inventory.stock.inventory()}" class="btn btn-sm btn-block" /></a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="cajabar1 sticky-top">
+                        <div class="pos-f-t">
+                            <div class="collapse" id="navbarToggleExternalContent">
+                                <div class="p-3" style="background: #2A2627;">
+                                    <h3 class="text-white h4">Perfil de: <h:commandLink value="#{user.user.getpNombre()} #{user.user.getpApellido()}" action="#{user.user.profile()}" /></h3>
+                                    <h:commandButton value="Cerrar sesión" action="#{user.navU.login()}" class="btn btn-danger" />
+                                </div>
+                            </div>
+                            <nav class="navbar navbar-dark" style="background: #2A2627;">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon" />
+                                </button>
+                                <h:commandButton value="English" action="#{user.navU.homeen()}" class="btn btn-sm text-white" />
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="espac4" />
+                <div class="cajaconte">
+                    <div class="cajaconte1">
+                        <div id="carousel1" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel1" data-slide-to="0" class="active" />
+                                <li data-target="#carousel1" data-slide-to="1" />
+                                <li data-target="#carousel1" data-slide-to="2" />
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <h:graphicImage value="#{resource['/img/Carousel/7.jpg']}" class="d-block w-100" alt="..." />
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h1>Nada será imposible</h1>
+                                        <h3>Nuestro equipo de entrenadores darán lo mejor de sí, para ver progresos en usted y en su entrenamiento.</h3>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <h:graphicImage value="#{resource['/img/Carousel/5.jpg']}" class="d-block w-100" alt="..." />
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h1>No gain. No pain</h1>
+                                        <h3>- La pelea se gana o pierde lejos de los testigos, tras las líneas, en el gimnasio, en la carretera, lejos de donde bailo bajo esas luces. - Muhammad Ali.</h3>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <h:graphicImage value="#{resource['/img/Carousel/6.jpg']}" class="d-block w-100" alt="..." />
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h1>Vive Befree</h1>
+                                        <h3>- La resistencia con la que te enfrentas en el gimnasio y la resistencia con la que te encuentras en la vida solo pueden construir un carácter fuerte. - Arnold Schwarzenegger.</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true" />
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true" />
+                                <span class="sr-only">Siguiente</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cajaconte2">
+                        <div class="cajaconte2-1">
+                            <div class="cajaconte2-1-1" />
+                            <div class="cajaconte2-1-2 shadow p-3 mb-5 bg-white rounded">
+                                <div class="cajaconte2-1-2-1 shadow p-3 mb-5 bg-white rounded">
+                                    <h1>Servicios del gimnasio:</h1>
+                                </div>
+                                <div class="cajaconte2-1-2-2">
+                                    <h2>· Sauna</h2>
+                                    <h2>· Entrenamiento semi-personalizado</h2>
+                                    <h2>· Nutrición deportiva</h2>
+                                    <h2>· TRX</h2>
+                                    <h2>· Acondicinamiento físico</h2>
+                                </div>
+                            </div>
+                            <div class="cajaconte2-1-1" />
+                        </div>
+                    </div>
+                    <div class="cajaconte3">
+                        <div class="cajaconte3-1">
+                            <div class="cajaconte3-1-1 shadow p-2 mb-2 bg-white rounded">
+                                <h:graphicImage value="#{resource['/img/Inicio/equipo.png']}" alt="" />
+                            </div>
+                            <div class="cajaconte3-2-1 shadow bg-white rounded">
+                                <div class="cajaconte3-2-1-1">
+                                    <div class="cajaconte3-2-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/Personas/man (4).png']}" alt="" />
+                                    </div>
+                                    <div class="cajaconte3-2-1-1-2">
+                                        <h3>Brandon Andrés Palencia</h3>
+                                    </div>
+                                </div>
+                                <div class="cajaconte3-2-1-1">
+                                    <div class="cajaconte3-2-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/Personas/man (1).png']}" alt="" />
+                                    </div>
+                                    <div class="cajaconte3-2-1-1-2">
+                                        <h3>José Daniel Niño</h3>
+                                    </div>
+                                </div>
+                                <div class="cajaconte3-2-1-1">
+                                    <div class="cajaconte3-2-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/Personas/man.png']}" alt="" />
+                                    </div>
+                                    <div class="cajaconte3-2-1-1-2">
+                                        <h3>Nicolás Pedraza</h3>
+                                    </div>
+                                </div>
+                                <div class="cajaconte3-2-1-1">
+                                    <div class="cajaconte3-2-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/Personas/man (5).png']}" alt="" />
+                                    </div>
+                                    <div class="cajaconte3-2-1-1-2">
+                                        <h3>José Gregorio Plaza</h3>
+                                    </div>
+                                </div>
+                                <div class="cajaconte3-2-1-1">
+                                    <div class="cajaconte3-2-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/Personas/man (2).png']}" alt="" />
+                                    </div>
+                                    <div class="cajaconte3-2-1-1-2">
+                                        <h3>Yandy Caro</h3>
+                                    </div>
+                                </div>
+                                <div class="cajaconte3-2-1-1">
+                                    <div class="cajaconte3-2-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/Personas/man (3).png']}" alt="" />
+                                    </div>
+                                    <div class="cajaconte3-2-1-1-2">
+                                        <h3>Álex GarcÍa</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte3-3-1">
+                                <div id="carousel2" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <h:graphicImage value="#{resource['/img/Inicio/IMG-20191117-WA0001.jpg']}" class="w-100" alt="..." />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['/img/Inicio/22279439_176621746241858_1420820439344029964_n.jpg']}" class="d-block w-100" alt="..." />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['/img/Inicio/31919457_242894259614606_6654686881780858880_n.jpg']}" class="d-block w-100" alt="..." />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cajafin4">
+                    <div class="cajafin4-1">
+                        <h:graphicImage value="#{resource['/img/Inicio/sicvos w.png']}" title="Logo sistema" alt="Responsive image" />
+                    </div>
+                    <div class="cajafin4-2">
+                        <h6>| David Leonardo Salcedo Sierra</h6>
+                        <h6>| Nixon Giovanny Pardo Téllez</h6>
+                        <h6>| Luis Alfredo Sarmiento Brango</h6>
+                        <h6>| SENA CSF, 1906818, GAES 3</h6>
+                        <h6>| © Copyright 2019, Bogotá DC, Colombia</h6>
+                    </div>
+                    <div class="cajafin4-3">
+                        <h:graphicImage value="#{resource['/img/Inicio/sena.png']}" title="Logo sena" alt="Responsive image" />
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | Inventories (Machinery (News))</title>
+	<h:outputStylesheet library="css" name="styles5man.css" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="js" name="jquery-3.4.1.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}" />
+    </h:head>
+    <h:body>
+            <div class="caja">
+                <div class="barraprin">
+                    <div class="logo"></div>
+                    <div class="logo1">
+                        <h:graphicImage value="#{resource['/img/Inicio/PRIN1e.jpg']}" class="img-fluid" title="Logo empresa" alt="Responsive image" />
+                    </div>
+                    <div class="logo"></div>
+                </div>
+                <h:form>
+                <div class="cajabar">
+                    <div class="cajabar1">
+                        <nav class="navbar-center">
+                            <div class="navega">
+                                <ul>
+                                    <li><a class=""><h:commandButton value="Home" action="#{user.navU.ahome()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="About Us" action="#{user.navU.aabout()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Reports" action="#{user.report.reports()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Sales" action="#{sale.buy.sales()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class="inici"><h:commandButton value="Inventories" action="#{inventory.stock.inventory()}" class="btn btn-sm btn-block text-white" /></a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>                
+                    <div class="cajabar1 sticky-top">
+                        <div class="pos-f-t">
+                            <div class="collapse" id="navbarToggleExternalContent">
+                                <div class="p-3" style="background: #2A2627;">
+                                    <h3 class="text-white h5">Profile of: <h:commandLink value="#{user.user.getpNombre()} #{user.user.getpApellido()}" action="#{user.user.profile()}" /></h3>
+                                    <h:commandButton value="Sign off" action="#{user.navU.login()}" class="btn btn-danger" />
+                                </div>
+                            </div>
+                            <nav class="navbar navbar-dark">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon" />
+                                </button>
+                                <h:commandButton value="Español" action="#{user.navU.homeen()}" class="btn btn-sm text-white" />
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                </h:form>
+                <div class="espac3" />
+                <div class="cajaconte">
+                    <div class="cajaconte1">
+                        <h:form>
+                        <div class="cajaconte1-1">
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Inventarios/product.png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="stoc"><h:commandButton value="Stock" action="#{inventory.stock.inventory()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Inventarios/fitness.png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="maqu"><h:commandButton value="Machinery" action="#{inventory.machi.maqui()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                        </div>
+                        </h:form>
+                    </div>
+                    <div class="cajaconte2">
+                        <div class="cajaconte2-1">
+                            <h1>Inventory news: </h1>
+                        </div>
+                        <div class="cajaconte2-2">
+                        <div class="espac3" />
+                            <h:form>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput1">Machine ID:</label>
+                                    <h:selectOneMenu id="maquinas" class="form-control form-control-lg" value="#{inventory.machi.idMaq}" >
+                                        <f:selectItem itemLabel="Machine ..." itemValue="" />
+                                        <f:selectItems value="#{inventory.machi.listMaq}" var="maquina" itemValue="#{maquina.idMaquina}" itemLabel="#{maquina.nombre}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Select the type of novelty:</label>
+                                    <h:selectOneMenu value="#{inventory.machi.novedad.tipoNovedad}" class="form-control" id="formGroupExampleInput2" required="">
+                                        <f:selectItem itemValue="DEFAULT" itemLabel="Factory defect" />
+                                        <f:selectItem itemValue="HURT" itemLabel="Damage from a customer" />
+                                        <f:selectItem itemValue="DAMAGE" itemLabel="Damage from an official" />
+                                        <f:selectItem itemValue="ARREGLO" itemLabel="Repair" />
+                                        <f:selectItem itemValue="OTRO" itemLabel="Other" />
+                                    </h:selectOneMenu>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput3">Date:</label>
+                                    <p:inputText class="form-control" value="#{inventory.machi.fecha}" id="formGroupExampleInput3" type="date" placeholder="" required="" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Description:</label>
+                                    <p:inputTextarea value="#{inventory.machi.novedad.descripcion}" class="form-control" id="exampleFormControlTextarea1" rows="5" required="" />
+                                </div>
+                                <div class="espac3" />
+                                <h:commandButton value="Send" action="#{inventory.machi.addNov(user.user.id)}" class="btn btn-danger btn-block" />
+                            </h:form>
+                            <div class="espac1" />
+                            <h:form>
+                                <h:commandButton value="Return" action="#{inventory.machi.maqui()}" class="btn btn-secondary btn-block" />
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+                <div class="cajafin4">
+                    <div class="cajafin4-1">
+                        <h:graphicImage value="#{resource['/img/Inicio/sicvos w.png']}" title="Logo sistema" alt="Responsive image" />
+                    </div>
+                    <div class="cajafin4-2">
+                        <h6>| David Leonardo Salcedo Sierra</h6>
+                        <h6>| Nixon Giovanny Pardo Téllez</h6>
+                        <h6>| Luis Alfredo Sarmiento Brango</h6>
+                        <h6>| SENA CSF, 1906818, GAES 3</h6>
+                        <h6>| © Copyright 2019, Bogotá DC, Colombia</h6>
+                    </div>
+                    <div class="cajafin4-3">
+                        <h:graphicImage value="#{resource['/img/Inicio/sena.png']}" title="Logo sena" alt="Responsive image" />
+                    </div>
+                </div>
+            </div>
+    </h:body>
+</html>

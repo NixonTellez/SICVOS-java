@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | Ventas</title>
+	<h:outputStylesheet library="css" name="styles4me.css" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+        <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}" />
+    </h:head>
+    <h:body>
+            <div class="caja">
+                <div class="barraprin">
+                    <div class="logo"></div>
+                    <div class="logo1">
+                        <h:graphicImage value="#{resource['/img/Inicio/PRIN1.jpg']}" class="img-fluid" title="Logo empresa" alt="Responsive image" />
+                    </div>
+                    <div class="logo"></div>
+                </div>
+                <h:form>
+                <div class="cajabar">
+                    <div class="cajabar1">
+                        <nav class="navbar-center">
+                            <div class="navega">
+                                <ul>
+                                    <li><a class=""><h:commandButton value="Inicio" action="#{user.navU.ahome()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="¿Quiénes somos?" action="#{user.navU.aabout()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Reportes" action="#{user.report.reports()}"  class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class="inici"><h:commandButton value="Ventas" action="#{sale.buy.sales()}" class="btn btn-sm btn-block text-white" /></a></li>
+                                    <li><a class=""><h:commandButton value="Inventarios" action="#{inventory.stock.inventory()}" class="btn btn-sm btn-block" /></a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="cajabar1 sticky-top">
+                        <div class="pos-f-t">
+                            <div class="collapse" id="navbarToggleExternalContent">
+                                <div class="p-3" style="background: #2A2627;">
+                                    <h3 class="text-white h5">Perfil de: <h:commandLink value="#{user.user.getpNombre()} #{user.user.getpApellido()}" action="#{user.user.profile()}" /></h3>
+                                    <h:commandButton value="Cerrar sesión" action="#{user.navU.login()}" class="btn btn-danger" />
+                                </div>
+                            </div>
+                            <nav class="navbar navbar-dark">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon" />
+                                </button>
+                                <h:commandButton value="English" action="#{user.navU.homeen()}" class="btn btn-sm text-white" />
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                </h:form>
+                <div class="espac3" />
+                <div class="cajaconte">
+                    <div class="cajaconte1">
+                        <h:form>
+                        <div class="cajaconte1-1">
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Ventas/shopping-bag (1).png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="nven"><h:commandButton value="Nueva venta" action="#{sale.buy.sales()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Ventas/checklist (1).png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="hven"><h:commandButton value="Historial de ventas" action="#{sale.buy.hven()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Ventas/staff.png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="mem"><h:commandButton value="Membresías" action="#{service.mem.membre()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Ventas/promotion.png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="pro"><h:commandButton value="Promociones" action="#{user.navU.promo()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                        </div>
+                        </h:form>
+                    </div>
+                    <div class="cajaconte2">
+                        <div class="cajaconte2-1"><h1>Vender una membresía:</h1></div>
+                        <div class="cajaconte2-2">
+                            <div class="cajaconte2-2-1">
+                                <h:form>
+                                    <div class="cajaconte2-2-1-1">
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" />
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="1" />
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="2" />
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="3" />
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="4" />
+                                            </ol>
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <h:graphicImage value="#{resource['img/Ventas/1dia.png']}" class="d-block w-100" alt="" />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <h:graphicImage value="#{resource['img/Ventas/15dias.png']}" class="d-block w-100" alt="" />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <h:graphicImage value="#{resource['img/Ventas/1mes.png']}" class="d-block w-100" alt="" />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <h:graphicImage value="#{resource['img/Ventas/1sem.png']}" class="d-block w-100" alt="" />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <h:graphicImage value="#{resource['img/Ventas/1a.png']}" class="d-block w-100" alt="" />
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true" />
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true" />
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="cajaconte2-2-1-2">
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput1">Ingrese día de inicio: </label>
+                                            <p:inputText class="form-control" value="#{service.mem.fecha}" type="date" id="formGroupExampleInput1" placeholder="aaaa/mm/dd" required="true" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput3">Ingrese el ID del cliente: </label>
+                                            <p:inputText class="form-control" value="#{service.mem.idClient}" id="formGroupExampleInput3" placeholder="1020192" required="true" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2">Seleccione el tipo de membresía: </label>
+                                            <h:selectOneMenu id="membresia1" value="#{service.mem.memb.tipoPlan}" class="form-control" required="true" >
+                                                <f:selectItem itemLabel="Membresía ..." itemValue="" />
+                                                <f:selectItem itemLabel="Quincenal" itemValue="QUINCENAL " />
+                                                <f:selectItem itemLabel="Mensual" itemValue="MENSUAL" />
+                                                <f:selectItem itemLabel="Trimestral" itemValue="TRIMESTRAL" />
+                                                <f:selectItem itemLabel="Semestral" itemValue="SEMESTRAL" />
+                                                <f:selectItem itemLabel="Anual" itemValue="ANUAL" />
+                                            </h:selectOneMenu>
+                                        </div>
+                                        <p:commandButton value="Registrar" action="#{service.mem.addMembresia()}" class="btn btn-danger btn-block" />
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                        <div class="cajaconte2-1"><h1>Modificar una membresía:</h1></div>
+                        <div class="cajaconte2-3">
+                            <h:form id="cm">
+                                <div class="cajaconte2-3-1">
+                                    <div class="espac3" />
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput3">Ingrese el ID del cliente: </label>
+                                        <p:inputText class="form-control" value="#{service.mem.idClient}" id="formGroupExampleInput3" placeholder="" required="" />
+                                    </div>
+                                    <p:commandButton value="Consultar" action="#{service.mem.consulMembresia()}" update="dtMembresia" class="btn btn-danger" />
+                                    <div class="espac1" />
+                                </div>
+                                <div class="cajaconte2-3-2">
+                                    <div class="form-group">
+                                        <p:dataTable class="table" styleClass="table table-hover" style="table" value="#{service.mem.totalMem}" id="dtMembresia" var="m" rows="1">
+                                            <p:column class="text-white bg-danger" headerText="Nombre(ID) del cliente">
+                                                <p:outputLabel value="#{m.idUsuario.idUsuario}"></p:outputLabel>
+                                            </p:column>
+                                            <p:column headerText="Tipo de plan">
+                                                <p:outputLabel value="#{m.tipoPlan}"></p:outputLabel>
+                                            </p:column>
+                                            <p:column headerText="Fecha de inicio">
+                                                <p:outputLabel value="#{m.fechaInicio}">
+                                                    <f:convertDateTime pattern="MM-dd-yyyy" />
+                                                </p:outputLabel>
+                                            </p:column>
+                                            <p:column headerText="Modificar">
+                                                <p:commandButton actionListener="#{service.mem.membresiaUpdate(m)}" class="btn btn-danger" oncomplete="PF('dlg').show();" value="Modificar" update=":dlgM" />
+                                            </p:column>
+                                        </p:dataTable>
+                                    </div>
+                                </div>
+                            </h:form>
+                            <p:dialog header="Numero de Membresia #{service.mem.memb.numeroMembresia}" widgetVar="dlg" id="dlgM" >
+                                <h:form>
+                                    <div class="form-group">
+                                        <p:outputLabel value="Numero de mebresia: "/>
+                                        <p:inputText class="form-control" value="#{service.mem.memb.numeroMembresia}" />
+                                    </div>
+                                    <div class="form-group">
+                                    <p:outputLabel value="ID del cliente: "/>
+                                    <p:inputText class="form-control" value="#{service.mem.idClient}" />
+                                    </div>
+                                    <div class="form-group">
+                                    <p:outputLabel value="Nueva fecha de inicio: "/>
+                                    <p:inputText class="form-control" value="#{service.mem.fecha}" type="date" />
+                                    </div>
+                                    <div class="form-group">
+                                        <p:outputLabel  value="Tipo de membresia: "/>
+                                        <h:selectOneMenu class="form-control" value="#{service.mem.memb.tipoPlan}" >
+                                            <f:selectItem itemLabel="Membresía ..." itemValue="" />
+                                            <f:selectItem itemLabel="Quincenal" itemValue="QUINCENAL " />
+                                            <f:selectItem itemLabel="Mensual" itemValue="MENSUAL" />
+                                            <f:selectItem itemLabel="Trimestral" itemValue="TRIMESTRAL" />
+                                            <f:selectItem itemLabel="Semestral" itemValue="SEMESTRAL" />
+                                            <f:selectItem itemLabel="Anual" itemValue="ANUAL" />
+                                        </h:selectOneMenu>
+                                    </div>
+                                    <p:commandButton value="Actualizar" class="btn btn-danger" action="#{service.mem.editMembresia()}" oncomplete="PF('dlg').hide();" update=":cm" />
+                                    <p:commandButton value="Cancelar" class="btn bg-dark" immediate="true" oncomplete="PF('dlg').hide();" />
+                                </h:form>
+                            </p:dialog>
+                        </div>
+                    </div>
+                </div>
+                <div class="cajafin4">
+                    <div class="cajafin4-1">
+                        <h:graphicImage value="#{resource['/img/Inicio/sicvos w.png']}" title="Logo sistema" alt="Responsive image" />
+                    </div>
+                    <div class="cajafin4-2">
+                        <h6>| David Leonardo Salcedo Sierra</h6>
+                        <h6>| Nixon Giovanny Pardo Téllez</h6>
+                        <h6>| Luis Alfredo Sarmiento Brango</h6>
+                        <h6>| SENA CSF, 1906818, GAES 3</h6>
+                        <h6>| © Copyright 2019, Bogotá DC, Colombia</h6>
+                    </div>
+                    <div class="cajafin4-3">
+                        <h:graphicImage value="#{resource['/img/Inicio/sena.png']}" title="Logo sena" alt="Responsive image" />
+                    </div>
+                </div>
+            </div>
+    </h:body>
+</html>
