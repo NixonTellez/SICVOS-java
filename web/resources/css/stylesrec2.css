@@ -1,0 +1,245 @@
+*{
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+@font-face {
+        font-family: Roboto;
+        src: url("#{resource['font:Roboto-Regular.ttf']}");
+}
+body{
+	background-image: url("#{resource['img/Inicio:23.jpg']}");
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+.caja{
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+.barraprin{
+	width: 100%;
+	height: 150px;
+	background: #2A2627;
+	margin: auto;
+	float: left;
+}
+.logo{
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+.logo1 img{
+        width: 100%;
+        height: 100%;
+}
+.logo1{
+        width: 60%;
+        height: 100%;
+        float: left;
+}
+.cajabar{
+	width: 100%;
+	height: 60px;
+	background: #2A2627;
+	float: left;
+}
+.cajabar1{
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+.navega{
+	width: 100%;
+	height: 50px;
+        text-shadow: 1px 1px 1px gray;
+        padding-top: 2px;
+	border-radius: 3px;
+}
+.btn a{
+	color: #ffffff;
+}
+.btn a:hover{
+	color: #ffffff;
+}
+nav ul{
+	list-style: none;
+	text-align: center;
+}
+nav ul li{
+	width: 150px;
+}
+nav ul li:hover ul{
+	font-size: 1.1em;
+	display: block;
+}
+nav ul li a{
+	display: block;
+	text-decoration: none;
+	border-radius: 3px;
+	background: #ffffff;
+	color: #000000;
+	font-size: 1.1em;
+	padding: 11px 0px;
+}
+nav .inici{
+	background: #EC3138;
+	border: 1px solid red;
+	color: #ffffff;
+}
+nav .inici:hover{
+	background: rgba(236,49,56,0.9);
+	border: 1px solid red;
+	color: #ffffff;
+}
+nav .ini{
+	background: #2A2627;
+	border: 1px solid gray;
+	color: #ffffff;
+}
+nav .ini:hover{
+	background: rgba(42,38,39,0.8);
+	border: 1px solid gray;
+	color: #ffffff;
+}
+nav .reg:hover{
+	background: rgba(250,250,250,0.6);
+	border: 1px solid gray;
+	color: #000000;
+}
+nav .navega ul li{
+}
+nav .navega>ul>li{
+	display: inline-block;
+}
+nav ul li a:hover{
+	color: #ffffff;
+	border: 1px solid red;
+	background: rgba(255,255,255,0.5);
+}
+nav ul li ul li a{
+	width: 150px;
+}
+nav ul li ul li a{
+	display: block;
+	text-decoration: none;
+	border: 1px solid red;
+	background: #ffffff;
+	color: #000000;
+	font-size: 1em;
+	padding: 11px 0px;
+	border-radius: 3px;
+}
+nav ul li ul li a:hover{
+	color: #ffffff;
+	border: 1px solid red;
+	background: rgba(236,49,56,0.5);
+}
+nav li ul{
+	position: absolute;
+	display: none;
+}
+.cajarec{
+	width: 100%;
+	height: 450px;
+	background: rgba(255,255,255,0.85);
+	align-items: center;
+	display: flex;
+	margin: auto;
+}
+.cajarec1{
+        width: 50%;
+	height: 90%;
+	background: #ffffff;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 2%;
+	margin: auto;
+	float: left;
+}
+.cajarec1-1{
+        width: 20%;
+        height: 45.5%;
+        float: left;
+}
+.cajarec1-1 img{
+        width: 100%;
+        height: 100%;
+}
+.cajarec1-2{
+        width: 80%;
+        height: 100%;
+        padding: 0% 5%;
+        float: left
+}
+.cajarec1-2 h1{
+        color: #BE5108;
+        text-align: center;
+}
+.espac{
+	width: 100%;
+	height: 15px;
+	background: rgba(255,255,255,0.85);
+	float: left;
+}
+.espac1{
+	width: 100%;
+	height: 45px;
+	background: rgba(255,255,255,0.85);
+	float: left;
+}
+.espac2{
+	width: 100%;
+	height: 50px;
+	background: rgba(255,255,255,0.85);
+	float: left;
+}
+.espac3{
+	width: 5%;
+	height: 5%;
+	float: left;
+}
+.cajafin{
+	width: 100%;
+	height: 250px;
+	background: #2A2627;
+	padding: 1.5%;
+	display: flex;
+	margin: auto;
+}
+.cajafin1{
+	width: 30%;
+	height: 100%;
+	margin: auto;
+}
+.cajafin1 iframe{
+	width: 100%;
+	height: 100%;
+	float: right;
+}
+.cajafin2{
+	width: 25%;
+	height: 100%;
+	margin: auto;
+	float: left;
+}
+.cajafin2 h5{
+	color: #ffffff;
+}
+.cajafin2 h6{
+	color: #ffffff;
+}
+.cajafin3{
+	width: 35%;
+	height: 100%;
+	margin: auto;
+	float: left;
+}
+.cajafin3 h5{
+	color: #ffffff;
+}
+.cajafin3 a img{
+	width: 50px;
+	height: 50px;
+	float: left;
+}
