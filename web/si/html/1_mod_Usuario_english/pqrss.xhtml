@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | QCCS (Suggestion)</title>
+	<h:outputStylesheet library="css" name="styles6s.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="js" name="jquery-3.4.1.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}" />
+    </h:head>
+    <h:body>
+            <div class="caja">
+                <div class="barraprin">
+                    <div class="logo"></div>
+                    <div class="logo1">
+                        <h:graphicImage value="#{resource['/img/Inicio/PRIN1e.jpg']}" class="img-fluid" title="Logo empresa" alt="Responsive image" />
+                    </div>
+                    <div class="logo"></div>
+                </div>
+                <h:form>
+                <div class="cajabar">
+                    <div class="cajabar1">
+                        <nav class="navbar-center">
+                            <div class="navega">
+                                <ul>
+                                    <li><a class=""><h:commandButton value="Home" action="#{user.navU.home()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="About Us" action="#{user.navU.about()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Services" action="#{service.nav.services()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class="inici"><h:commandButton value="QCCS" action="#{service.nav.pqrs()}" class="btn btn-sm btn-block text-white" /></a></li>
+                                    <li><a class=""><h:commandButton value="Login" action="#{user.navU.login()}" class="btn btn-sm btn-block" /></a>
+                                        <ul>
+                                            <li><a class="reg"> <h:commandButton value="Sign in" action="#{user.navU.registro()}" class="btn btn-sm btn-block" /></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><h:commandButton value="Español" action="#{user.navU.homeen()}" class="btn btn-sm btn-block text-white" /></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                </h:form>
+                <div class="cajaconte">
+                    <div class="cajaconte1">
+                        <h:form>
+                        <div class="cajaconte1-1">
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/PQRS/petition (1).png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="pqrsp"><h:commandButton value="Question" action="#{service.nav.pqrs()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/PQRS/customer.png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="pqrsq"><h:commandButton value="Complain" action="#{service.nav.queja()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/PQRS/refund.png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="pqrsr"><h:commandButton value="Claim" action="#{service.nav.recla()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/PQRS/pro.png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="pqrss"><h:commandButton value="Suggestion" action="#{service.nav.sugere()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                        </div>
+                        </h:form>
+                    </div>
+                    <div class="cajaconte2">
+                        <div class="cajaconte2-1" />
+                        <h:form>
+                            <p:growl id="growl" life="5000" autoUpdate="true" />
+                        <div class="cajaconte2-2">
+                            <div class="cajaconte2-2-1">
+                                <h1>Suggestion:</h1>
+                            </div>
+                            <div class="cajaconte2-2-2">
+                                <h3><p:outputLabel value="Enter the date:" for="formGroupExampleInput3"/></h3>
+                            </div>
+                            <div class="cajaconte2-2-3">
+                                <div class="form-group">
+                                    <p:inputText class="form-control" value="#{service.pqrs.fecha}" id="formGroupExampleInput3" type="date" placeholder="" required="true" />
+                            </div>
+                            </div>
+                            <div class="cajaconte2-2-4">
+                                <h3><p:outputLabel value="Description:" for="descip" /></h3>
+                            </div>
+                            <div class="cajaconte2-2-5">
+                                <h:inputTextarea class="barra1" id="descip" cols="45" rows="4" value="#{service.pqrs.cliente.descripcion}" required="true" requiredMessage="Empty field" />
+                            </div>
+                            <div class="espac0" />
+                            <div class="cajaconte2-2-6">
+                                <div class="cajaconte2-2-6-1" />
+                                <div class="cajaconte2-2-6-1">
+                                    <h:commandButton value="Send" action="#{service.pqrs.addPQRS1(4)}" onclick="alert('Do you want to submit the suggestion?');" class="btn btn-danger btn-lg btn-block"/>
+                                </div>
+                                <div class="cajaconte2-2-6-1" />
+                            </div>
+                        </div>
+                        </h:form>
+                        <div class="cajaconte2-1" />
+                    </div>	
+                </div>
+                <div class="cajafin">
+                    <div class="cajafin1">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.2245489510838!2d-74.094058285268!3d4.553583196691625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f989b9fa70f49%3A0x840ad0cb913333bb!2sBe%20Free%20GYM!5e0!3m2!1ses!2sco!4v1575395617147!5m2!1ses!2sco" allowfullscreen="" />
+                    </div>
+                    <div class="cajafin2">
+                        <a href="../../../index.xhtml"><h5>BEFREE GYM® Crossfit</h5></a>
+                        <a href="https://www.reebok.co/"><h6>Reebok®</h6></a>
+                        <a href="https://www.google.com/maps/place/Be+Free+GYM/@4.5535832,-74.0940583,17z/data=!3m1!4b1!4m5!3m4!1s0x8e3f989b9fa70f49:0x840ad0cb913333bb!8m2!3d4.5535832!4d-74.0918696?hl=es"><h6>● Address: Cra. 4 Este # 37b - 38 Sur, Bogotá</h6></a>
+                        <h6>● Phone: 3672205</h6>
+                    </div>
+                    <div class="cajafin3">
+                        <h5>Follow us on Facebook:</h5>
+                        <a href="https://www.facebook.com/befreegymvictoria/"><h:graphicImage value="#{resource['/img/Inicio/facebook.png']}" alt="" title="Facebook: Befree Gym" /></a>
+                        <div class="espac3" />
+                        <a href="https://www.facebook.com/profile.php?id=100007351306475"><h:graphicImage value="#{resource['/img/Inicio/facebook.png']}" alt="" title="Brandon Andres Palencia" /></a>
+                    </div>
+                </div>
+            </div>
+    </h:body>
+</html>

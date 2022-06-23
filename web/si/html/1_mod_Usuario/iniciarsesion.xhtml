@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | Iniciar sesion</title>
+        <h:outputStylesheet library="css" name="stylesic.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="js" name="jquery-3.4.1.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}" />
+    </h:head>
+    <h:body>
+            <div class="caja">
+                <div class="barraprin">
+                    <div class="logo"></div>
+                    <div class="logo1">
+                        <h:graphicImage value="#{resource['/img/Inicio/PRIN1.jpg']}" class="img-fluid" title="Logo empresa" alt="Responsive image" />
+                    </div>
+                    <div class="logo"></div>
+                </div>
+                <h:form>
+                <div class="cajabar">
+                    <div class="cajabar1">
+                        <nav class="navbar-center">
+                            <div class="navega">
+                                <ul>
+                                    <li><a class=""><h:commandButton value="Inicio" action="#{user.navU.home()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="¿Quiénes somos?" action="#{user.navU.about()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Servicios" action="#{service.nav.services()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="PQRS" action="#{service.nav.pqrs()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Registrarse" action="#{user.navU.registro()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><h:commandButton value="English" action="#{user.navU.homeen()}" class="btn btn-sm btn-block text-white" /></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                </h:form>
+                <div class="cajaic">
+                    <div class="cajaic1">
+                        <div class="cajaic1-1">
+                            <div class="cajaic1-1-1" />
+                            <div class="cajaic1-1-2">
+                                <h:graphicImage value="#{resource['/img/Iconos/Inicio/group.png']}" alt="" />
+                            </div>
+                            <div class="cajaic1-1-1" />
+                        </div>
+                        <div class="cajaic1-2">
+                            <h:form id="Login">
+                                <p:growl id="growl" life="5000" autoUpdate="true" />
+                                <div class="form-row">
+                                    <p:outputLabel for="id">Nombre(ID) de usuario:</p:outputLabel>
+                                    <p:inputText class="form-control" id="id" value="#{user.user.id}" placeholder="Ingrese su ID de usuario" required="true" />
+                                    <small id="emailHelp" class="form-text text-muted">1001101010</small>
+                                </div>
+                                <br />
+                                <div class="form-row">
+                                    <p:outputLabel for="contraseña">Contraseña:</p:outputLabel>
+                                    <p:password class="form-control" id="contraseña" value="#{user.user.contraseña}" placeholder="Ingrese su contraseña" required="true" />
+                                    <small id="emailHelp" class="form-text text-muted">1234abcd</small>
+                                </div>
+                                <div class="espac" />
+                                <h:selectBooleanCheckbox id="customSwitch1" /> Recordar mi contraseña para futuros accesos.
+                                <div class="espac" />
+                                <h:commandButton  id="is" value="Iniciar sesión" action="#{user.user.validaLogin()}" class="btn btn-block btn btn-danger" />
+                            </h:form>
+                            <h:form>
+                                <div class="espac" />
+                                <div class="olv">
+                                    ¿Olvidaste tu contraseña?<h:commandLink value=" Si, necesito ayuda." action="#{user.navU.olvc()}" />
+                                </div>
+                                <div class="olv">
+                                    ¿Deseas registrarte?<h:commandLink value=" Hazlo aquí." action="#{user.navU.registro()}" />
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+                <div class="cajafin">
+                    <div class="cajafin1">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.2245489510838!2d-74.094058285268!3d4.553583196691625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f989b9fa70f49%3A0x840ad0cb913333bb!2sBe%20Free%20GYM!5e0!3m2!1ses!2sco!4v1575395617147!5m2!1ses!2sco" allowfullscreen="" />
+                    </div>
+                    <div class="cajafin2">
+                        <a href="../../../index.xhtml"><h5>BEFREE GYM® Crossfit</h5></a>
+                        <a href="https://www.reebok.co/"><h6>Reebok®</h6></a>
+                        <a href="https://www.google.com/maps/place/Be+Free+GYM/@4.5535832,-74.0940583,17z/data=!3m1!4b1!4m5!3m4!1s0x8e3f989b9fa70f49:0x840ad0cb913333bb!8m2!3d4.5535832!4d-74.0918696?hl=es"><h6>● Dirección: Cra. 4 Este # 37b - 38 Sur, Bogotá</h6></a>
+                        <h6>● Teléfono: 3672205</h6>
+                    </div>
+                    <div class="cajafin3">
+                        <h5>Síguenos en Facebook:</h5>
+                        <a href="https://www.facebook.com/befreegymvictoria/"><h:graphicImage value="#{resource['/img/Inicio/facebook.png']}" alt="" title="Facebook: Befree Gym" /></a>
+                        <div class="espac3" />
+                        <a href="https://www.facebook.com/profile.php?id=100007351306475"><h:graphicImage value="#{resource['/img/Inicio/facebook.png']}" alt="" title="Brandon Andres Palencia" /></a>
+                    </div>
+                </div>
+            </div>
+    </h:body>
+</html>

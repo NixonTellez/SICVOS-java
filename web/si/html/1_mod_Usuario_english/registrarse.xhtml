@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | Sign in</title>
+	<h:outputStylesheet library="css" name="stylesre.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+        <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}" />
+    </h:head>
+    <h:body>
+            <div class="caja">
+                <div class="barraprin">
+                    <div class="logo"></div>
+                    <div class="logo1">
+                        <h:graphicImage value="#{resource['/img/Inicio/PRIN1e.jpg']}" class="img-fluid" title="Logo empresa" alt="Responsive image" />
+                    </div>
+                    <div class="logo"></div>
+                </div>
+                <h:form>
+                <div class="cajabar">
+                    <div class="cajabar1">
+                        <nav class="navbar-center">
+                            <div class="navega">
+                                <ul>
+                                    <li><a class=""><h:commandButton value="Home" action="#{user.navU.home()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="About Us" action="#{user.navU.about()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Services" action="#{service.nav.services()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="QCCS" action="#{service.nav.pqrs()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><h:commandButton value="Español" action="#{user.navU.homeen()}" class="btn btn-sm btn-block text-white" /></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                </h:form>
+                <p:growl id="growl" life="5000" autoUpdate="true" />
+                <div class="cajare">
+                    <div class="cajare1">
+                        <div class="cajare1-1">
+                            <div class="cajare1-1-1" />
+                            <div class="cajare1-1-2">
+                                <h:graphicImage value="#{resource['/img/Iconos/Inicio/group.png']}" alt="" />
+                            </div>
+                            <div class="cajare1-1-1" />
+                        </div>
+                        <div class="cajare1-2">
+                            <h:form>
+                                <div class="form-row">
+                                    <p:outputLabel for="validationDefault01">First name:</p:outputLabel>
+                                    <p:inputText class="form-control" id="validationDefault01" placeholder="Brandon" size="20" value="#{user.user.u.primerNombre}" required="true" requiredMessage="Empty field" />
+                                </div>
+                                <br />
+                                <div class="form-row">
+                                    <p:outputLabel for="validationDefault02">Second name:</p:outputLabel>
+                                    <p:inputText class="form-control" id="validationDefault02" placeholder="Andres" size="20" value="#{user.user.u.segundoNombre}"/>
+                                </div>
+                                <br />
+                                <div class="form-row">
+                                    <p:outputLabel for="validationDefault03">Surname:</p:outputLabel>
+                                    <p:inputText class="form-control" id="validationDefault03" placeholder="Palencia" size="20" value="#{user.user.u.primerApellido}" required="true" requiredMessage="Empty field" />
+                                </div>
+                                <br />
+                                <div class="form-row">
+                                    <p:outputLabel for="validationDefault04">Second surname:</p:outputLabel>
+                                    <p:inputText class="form-control" id="validationDefault04" placeholder="Perez" size="20" value="#{user.user.u.segundoApellido}"/>
+                                </div>
+                                <br />
+                                <div class="form-row">
+                                    <p:outputLabel for="validationDefault05">Citizenship card:</p:outputLabel>
+                                    <p:inputText class="form-control" id="validationDefault05" placeholder="1001101010" size="20" value="#{user.user.u.idUsuario}" required="true" requiredMessage="Empty field" />
+                                </div>
+                                <br />
+                                <div class="form-row">
+                                    <p:outputLabel for="validationDefaultEmail1">Email:</p:outputLabel>
+                                    <p:inputText class="form-control" id="validationDefaultEmail1" placeholder="ejemplo@befree.com" size="20" value="#{user.user.u.correo}" required="true" requiredMessage="Empty field" />
+                                    <small id="emailHelp" class="form-text text-muted">Enter the email you use the most.</small>
+                                </div>
+                                <br />
+                                <div class="form-row">
+                                    <p:outputLabel for="validationDefault06">Enter a password:</p:outputLabel>
+                                    <p:password id="validationDefault06" value="#{user.user.u.contraseña}" match="validationDefault07" feedback="true" required="true" requiredMessage="Empty field" placeholder="1234abcd" class="form-control">
+                                        <f:validateLength minimum="8" maximum="15"/>
+                                    </p:password>
+                                    <small id="passwordHelpInline" class="text-muted">It must be between 8 to 15 characters.</small>
+                                </div>
+                                <br />
+                                <div class="form-row">
+                                    <p:outputLabel for="validationDefault07">Confirm the password:</p:outputLabel>
+                                    <p:password  class="form-control" id="validationDefault07" placeholder="1234abcd" value="#{user.user.u.contraseña}" required="true" requiredMessage="Empty field" /> 
+                                    <small id="passwordHelpInline" class="text-muted">The values must match.</small>
+                                </div>
+                                <br />
+                                <div class="form-row">
+                                    <label class="form-text" for="Check1">
+                                        <h:selectBooleanCheckbox value="#{user.user.terminos}" id="Check1">
+                                            <p:ajax update="registro" />
+                                        </h:selectBooleanCheckbox>
+                                        I have read and accept the <p:commandLink value="Terms and conditions of use" onclick="PF('Terminos').show();" partialSubmit="true" process="@this" /> of this Website and the <p:commandLink value="Policy on the Processing of Personal Data." onclick="PF('Politica').show();" partialSubmit="true" process="@this" /></label>
+                                </div>
+                                <br />
+                                <h:commandButton value="Check in" id="registro" action="#{user.user.regUsuario()}" disabled="#{!user.user.terminos}" class="btn btn-block btn btn-danger" />
+                                <br />
+                            </h:form>
+                                <p:dialog header="Terms and conditions of service provision" widgetVar="Terminos" modal="true" height="600">
+                                    <div class="container">
+                                        <br />
+                                        <br /><h1>Terms and conditions of service provision</h1>
+                                        <br />
+                                        <br />
+                                        <br /><h3>1. Mora on payments elite and corporate plans</h3>
+                                        <br /> Definition: Please understand by default that situation in which THE AFFILIATED AND/OR BENEFICIARY OF THE AGREEMENT is NOT up to date with your<h5>payments in accordance with the provisions of this contract. THE AFFILIATED AND/OR BENEFICIARY OF THE AGREEMENT that is in arrears may not enter the BefreeGym headquarters, without prior verification by the headquarters counter of the status</h5> of the de arrears in the payments presented by the AFILIADO.
+                                        <br /> In case of late payment of<h5>corporate invoices and/or membership fees by the AFFILIATED, THE COMPANY BENEFICIARY OF THE AGREEMENT AND / OR BENEFICIARY OF THE BefreeGym CONVENTION, will not</h5> allow the entry to users who present such situation until the balances due are canceled.
+                                        <br /><h5>PARAGRAFO 1: The elite plan AFFILIATE whose automatic debit cannot be performed, if it is rejected by the bank or any other circumstance that does not allow its realization happens, BefreeGym or its arbitrator may allow payment of the concept subject to automatic debit at the Counter of the headquarters, prior to the administrative charge made by BefreeGym as a penalty according to the following rates: Platinum, One and Premium categories: $15,000; Classic and Super categories: $10,000. The PROVIDER shall not replenish the time that the beneficiaries of the de arrears convention were blocked.</h5>
+                                        <br /> PARAGRAFO 2: The elite plan member who is in<h5>arrears may not request freezes, upgrades or plan, contract assignments, withdrawals or any other prerogative granted to the AFILIADO by the BefreeGym Sports Medical Club until the balances due are cancelled.</h5>
+                                        <br /> PARAGRAFO 3: The elite plan member who is in<h5>arrears may not request freezes, upgrades or plan, contract assignments, withdrawals or any other prerogative granted to the AFILIADO by the BefreeGym Sports Medical Club</h5> until it is up to date.
+                                        <br />
+                                        <br /><h3>2. Procedure for debit plan elite</h3>
+                                        <br /> The debit to the bank account or credit card for the Elite Monthly Membership Fee will be made by the financial institution<h5>indicated by the AFFILIATED, and in case of any error in the debited value, the AFILIADO must</h5> inform the financial institution and BefreeGym jointly and simultaneously of this situation.
+                                        <br /> Paragraph: It is the responsibility of the AFILIADO, to verify that the automatic debit of your bank<h5>account and/or credit card is carried out correctly on a monthly basis. In case of any inconvenience in the debit, the AFILIADO may pay its Monthly Elite Membership Fee in the Counter of the respective headquarters to the BefreeGym Sports Medical Club.</h5>
+                                        <br />
+                                        <br /><h3>3. Affiliate Obligations</h3>
+                                        <br /> The AFFILIATE<h5>must comply efficiently and in a timely manner with the following rules:</h5>
+                                        <br /> It is the obligation of the member to perform the selected medical examination<h5>and/or physical fitness examination (medical and/or clinical evaluation), required to define an appropriate sports medical program. Once evaluated and with its training program established by the BefreeGym Sports Medical Club, it is obligated to fully follow the instructions of the training program regarding repetitions, times and frequencies of attendance, otherwise the provider is exempt from any responsibility. PARAGRAPH 1: In the event in which the AFILIADO decides not to practice the medical and/or clinical evaluation or decides not to follow the training program prepared by the PROVIDER, he must subscribe to the disclaimer document at the headquarters of the BefreeGym Sports Medical Club in which he/she will perform his training, prior to the start of the training. PARAGRAPH 2: Likewise, the PROVIDER will be exempt from liability, in the event of an accident for improper handling of the equipment by the AFILIADO.</h5>
+                                        <br /> Know and respect the TERMS AND CONDITIONS OF THE SERVICE PROVIDED in this document, the regulations established for the specific activities and follow the instructions of<h5>the Physicians Deportologos, Physiotherapists, Nutritionists, Clinical Evaluators, Coaches, Group Class Coaches and Personalized Coach of the BefreeGym Sports Medical Club.</h5>
+                                        <br /> Pay the<h5>value of the Plan in a timely manner.</h5>
+                                        <br /> Maintain for<h5>the entire term of the Contract affiliated with an EPS and/or PREPAID MEDICINE and keep up to date contributions to the social security regime in health. At the outset, and at any time during the term of the Contract, the PROVIDER may require the proofs showing the AFFILIATION of the AFILIADO to the social security system in health and that the payments are up to date.</h5>
+                                        <br /> Provide and declare complete<h5>and truthful information to the BefreeGym Sports Medical Club and all staff of Sports Physicians, Physiotherapists, Nutritionists, Clinical Evaluators, Trainers, Group Class Coaches and Personalized Trainer about their health status.</h5>
+                                        <br /> know the conditions of the services provided by third<h5>parties other than the PROVIDER in the facilities of the BefreeGym Sports Medical Club. THE AFILIADO will make use of these services offered by third parties only if it knows and accepts the conditions of provision of such services. It shall be understood that there is ancitric acceptance of the aforementioned conditions of service with the mere use thereof by the AFILIADO.</h5>
+                                        <br /> THE AFFILIATED<h5>AND/OR BENEFICIARY OF THE AGREEMENT are obliged to</h5> preserve all the elements made available to them by the BefreeGym Sports Medical Club to carry out the physical activity, in order to pay the equivalent value of its replacement and / or arrangement.
+                                        <br /> THE AFFILIATED, THE COMPANY BENEFICIARY OF THE AGREEMENT AND/OR BENEFICIARY OF THE AGREEMENT must submit the Petitions, Complaints and Complaints according to the parameters established by law and under the<h5>system established by the PROVIDER, whose information is available in the document annexed to this contract and that is an integral part thereof, which the AFFILIATED declares to know and accept.</h5>
+                                        <br /><h5>THE ELITE plan AFFILIATE must cancel the monthly fee under the automatic debit mode. If the debit cannot be made, THE AFFILIATED may cancel at headquarters. This may not exceed three (3) consecutive payments.</h5>
+                                        <br />
+                                        <br /><h3>4. Obligations and rights of the provider</h3>
+                                        <br /> Allow access<h5>by the AFILIADO to the headquarters of the BefreeGym Sports Medical Club to which it is entitled under the plan and category acquired or to the venues in operation at the time of signing the contract.</h5>
+                                        <br /><h5>Maintain your facilities properly.</h5>
+                                        <br /><h5>Offer medical or clinical evaluations TO THE AFFILIATED, according to the needs of the affiliate and according to the chosen plan. Appointments for the initial medical or clinical assessment of admission, as well as any other services that require it, are subject to prior coordination between the BefreeGym Sports Medical Club and the AFILIADO, taking into account the availability of staff and facilities.</h5>
+                                        <br /> The PROVIDER<h5>declares and acknowledges this by the AFILIADO, that the right of access to the BefreeGym Sports Medical Club and access to the medical income valuation indicated above is equivalent to a value of the YEAR (34%), SEMESTRE ( 36%) TRIMESTRE (52%) the value paid under this Agreement, adds that, once the evaluation has been made in no case will be refundable since it is part of the costs incurred by THE PROVIDER to make available to the AFFILIATED the corresponding services. Does not apply for Elite plan.</h5>
+                                        <br /> Modify according to the demand of each of the venues, schedules and categories thereof, of the group classes of one or more of its venues, as well as reduce or increase the number of<h5>classes and freely designate or remove the coaches or staff working in the venues where the BefreeGym Sports Medical Club operates and who provide services to the Affiliate. Changes made to the schedules, quantities and coaches of the group classes will be communicated to the member at each headquarters of the BefreeGym Sports Medical Club where the changes occur or by any other means that the PROVIDER deems appropriate and effective to communicate the event. </h5>
+                                        <br /> PARAGRAFO 1: In the event of a change of category from one of<h5>the headquarters of the BefreeGym Sports Medical Club, to a higher category, the AFFILIATED attending the headquarters automatically recategorized will be upgraded. Notwithstanding the foregoing, THE AFFILIATED, THE COMPANY BENEFITING FROM THE AGREEMENT AND/OR BENEFICIARY OF THE AGREEMENT at the time of renewal will assume the increase in the value of the membership plan. </h5>
+                                        <br /><h5>PARAGRAFO 2: For the Elite Plan the increase applies</h5> as set out in the SERVICE PROVISION AGREEMENT.
+                                        <br /><h5>Expand, reduce, remodel or close, temporarily or definitively the venues where the BefreeGym Sports Medical Club operates when the conditions of the business so determine. Where the closure of the venue is for a period of more than one (1) month, the affiliate may choose between continuing to enjoy the services contracted at another venue of equal or lower than those contracted, or unilaterally and in advance terminate the contract. In the event in which the AFILIADO chooses the termination of the contract, the PROVIDER will refund this corresponding value that it has paid and has not enjoyed and the value of the non-refundable costs from the day the AFILIADO submits the written application for termination in the respective BefreeGym Sports Medical Club according to its rate and category. This payment will be made by the PROVIDER within thirty (30) days of the date on which the AFILIADO makes the cancellation notification.</h5>
+                                        <br />
+                                        <br /><h3>5. Returns</h3>
+                                        <br /> There is no place for refunds for any circumstance other than the case referred to<h5>in paragraph (f) of the separate OBLIGATIONS AND RIGHTS OF THE PROVIDER, in</h5> which case the money will be refunded in proportion to the time paid and that is missing from being used at that time.
+                                        <br />
+                                        <br /><h3>6. Change of plan and/or category</h3>
+                                        <br /> It will<h5>be understood as a change of plan and/or category, when the AFFILIATED requests change from a category and/or low plan to a higher one and vice versa.</h5>
+                                        <br /> In case<h5>the AFFILIATED requests a change of category and his invoice has not exceeded 30 days after generated, the difference will be settled with the rates existing at the time of requesting the change. For all purposes, the plan's start date will be the one stipulated before the upgrade.</h5>
+                                        <br /> In the event that the AFILIADO requests a change of category<h5>and your invoice is greater than the 30th day after it is generated, the balance will be taken into account in favor of the remaining time of your membership plan and the current rate difference will be calculated.</h5>
+                                        <br /><h5>PARAGRAFO 1: For the Elite plan, the differential value between the registration fee and the right of access to sports medical services and medical evaluations must be canceled. The monthly payment will be updated to the new category and/or plan requested. </h5>
+                                        <br /> PARAGRAFO 2: For the standard plan, the upgrade will be generated at the time of the request and the differential value between the payment by right of access to sports medical services and medical evaluations between the current category and the<h5>new category must be canceled. For the corporate plan it applies according to agreement fees.</h5>
+                                        <br />
+                                        <br /><h3>7. Termination</h3>
+                                        <br /> By the<h5>provider:</h5>
+                                        <br /> THE PROVIDER may terminate this contract at any time unilaterally and without the refund of sums of money, for the breach of the AFFILIATED of the<h5>obligations arising in the contract and in the TERMS AND CONDITIONS OF THE PROVISION OF THE SERVICE set out herein. Termination will not result in any compensation in favor of the affiliate.</h5>
+                                        <br /> THE AFFILIATED, THE COMPANY BENEFICIARY OF THE AGREEMENT AND/OR BENEFICIARY OF THE AGREEMENT, which presents full or partial default on the payment of the<h5>Monthly Membership Fee and/or corporate plan invoice for ninety (90) consecutive days or not, for the same period of twelve (12) months, will be automatically disenenfied and will immediately lose the value paid for the Enrollment fee.</h5>
+                                        <br /> THE AFFILIATED, which is at odds with the good customs<h5>and / or healthy coexistence within any BefreeGym Sports Medical Club, which is improperly expressed towards the other AFFILIATES and / or employees of the PROVIDER, and who promotes goods and services using the headquarters of THE PROVIDER without written authorization of THE PROVIDER, will be automatically defiliated and will immediately lose the value paid for the registration fee.</h5>
+                                        <br /> By the<h5>affiliate:</h5>
+                                        <br /> at the<h5>request of THE AFFILIATED, provided that THE AFFILIATED, THE COMPANY BENEFICIARY OF THE AGREEMENT AND / OR BENEFICIARY OF THE CONVENTION are up to date on payments.</h5>
+                                        <br /><h5>PARAGRAFO 1: Without prejudice to the termination of the contract, the PROVIDER may collect the balances owed by the AFILIADO via legal collection and by reporting to the risk plants. The PROVIDER may carry out automatic debit directly and/or delegate and/or authorize the person or entity it deems relevant and suitable to fulfill the function of collecting the sums owed by the AFILIADO.</h5>
+                                        <br /><h5>PARAGRAFO 2: The ELITE PLAN AFFILIATE may unilaterally terminate this Agreement upon written notice to the PROVIDER no less than thirty (30) calendar days prior to the effective termination date. The PROVIDER will bill the AFILIADO for the thirty (30) days of</h5> the cancellation of the Membership and Registration to the Elite Plan, during which time the AFILIADO may make use of the BefreeGym Sports Medical Club according to its category and rate.
+                                        <br /><h5>PARAGRAFO 3: THE AFFILIATED who has expressly accepted and in separate document a minimum</h5> period of stay, shall comply with the agreement agreed in that document with respect to the request for cancellation of the service.
+                                        <br />
+                                        <br /><h3>8. Assignment of the contract</h3>
+                                        <br /> THE AFFILIATED<h5>may transfer the obligations and rights arising from this contract and that have not been used, in the following cases:</h5>
+                                        <br /> For affiliate<h5>death. In this event, within sixty (60) days of death, the heir(s) or successor(s) must reside at the headquarters of the BefreeGym Sports Medical Club, a written communication requesting the assignment of the Contract for the time of the plan that has not been enjoyed by the deceased and indicating the date from which such assignment will be activated. To this communication you must attach: (A)photocopy of the identity document of the assignee, (B) Civil Death Registry of the AFILIADO. (C) Extra statement before a notary public, which refers to the quality of (partner), brother, child, parent or family member) of the assignee with the AFILIADO, and (D) extra statement before a notary public indicating that the assignee</h5> is the sole beneficiary of the AFFILIATED and there is no person with a better right.
+                                        <br /><h5>for the MEDICAL disability of the AFILIADO in accordance with the rules described in clause one-third of this document.</h5>
+                                        <br /> By written request of the AFILIADO provided that it is at peace and safe in the fulfillment<h5>of all its obligations and express acceptance by the PROVIDER of the service. The assignment must be requested in writing by letter delivered in the city where the membership was made and at least eight (8) calendar days before the effective date. If the person receiving the plan has never been affiliated with BefreeGym, they must cancel the value of the right of access to sports medical services and medical evaluations, and if the plan they are receiving is higher, they must cancel the difference in the right of access.</h5>
+                                        <br /><h5>PARAGRAFO 1: THE AFFILIATED who acquires an annual or 16th-year PLAN shall have the right to make a transfer without any charge. In case of a second transfer being presented in the said plan, the AFILIADO will make an additional payment depending on the category. THE AFFILIATED, THE COMPANY BENEFITING FROM THE AGREEMENT AND/OR BENEFICIARY OF THE AGREEMENT that acquires a Quarterly PLAN, month by month and/or more than one assignment of the plan, must make an additional payment depending on the category.</h5>
+                                        <br /><h5>2: ELITE PLAN: For the elite plan do not apply the assignment (transfer) of the contract.</h5>
+                                        <br /><h5>PARAGRAFO 3: CORPORATE PLAN: Transfers of corporate plans should only be made to persons working in the same COMPANY BENEFICIARY OF THE AGREEMENT with letter of authorization of the agreement. If the company is not the one who pays, it may be transferred only to first-degree relatives of insanguinity and/or affinity (daddy, mom, siblings, children, spouse) The AFILIADO must send a letter requesting the transfer with the data of the beneficiary and copy of the identity documents. The request must be sent to the email atencion.sicvos@befree.gym. If it is for a third party, the third party must assume payment of access rights to sports medical services and medical evaluations, in addition to the difference of the plan to be received at an official rate.</h5>
+                                        <br /><h5>PARAGRAFO 4: THE AFFILIATED, THE COMPANY BENEFITING FROM THE AGREEMENT AND / OR BENEFICIARY OF THE AGREEMENT that makes income through tickets, may not assign them at all time these are personal and non-transferable, valid for two months from their purchase.</h5>
+                                        <br /><h5>PARAGRAFO 5: Whoever is a beneficiary of the Assignment of the Membership Plan must enter into a new contract for the provision of services and other documents required by the PROVIDER.</h5>
+                                        <br />
+                                        <br /><h3>9. Provisional suspension of services for freezing or disability</h3>
+                                        <br /><h5>CONGELATION: THE AFFILIATED who acquires an annual PLAN, will have the right to freeze, at no cost, the service two (2) times during the term of your PLAN. The end of each freeze may not be less than 7 days, nor greater than (30) thirty days. THE AFFILIATED who acquires a 16th-year PLAN shall have the right to freeze the service for one (1) at a time at no cost. The term of the freeze(s) may not be less than (7) seven days or greater than (30) thirty days. AFFILIATES who purchase a Quarterly or Lower PLAN may only freeze the provision of the service by paying the value set for each day of suspension as long as the plan is active. The term of suspension may in no case be less than (7) seven days. THE AFFILIATED who acquires a PLAN month by month, will not have the right to freeze his contract. </h5>
+                                        <br /><h5>PARAGRAFO 1: THE ELITE plan AFFILIATE may temporarily suspend (freeze) your membership plan for a minimum period of (7) seven days and up to (30) thirty calendar days. During the frozen time, THE AFILIADO will pay 25% of the value of each of the frozen days for headquarters maintenance, equipment and registration maintenance. Days of the month that are not within freezing dates will be paid 100% of your Elite Plan membership monthly fee. CONDITIONS: Any freeze must be requested by the AFILIADO the month before the effective date of the same. The freezing must be requested in writing at the Counter of the headquarters, taking into account the format of news of PLAN ELITE or communicating through the customer service line. THE AFFILIATED will not be able to enter the headquarters during the frozen time. In case THE AFFILIATED desist from freezing, to be reactivated, will pay one hundred percent (100%) of the remaining days of the month you intend to enjoy. At the time of requesting the freeze the affiliate cannot be in arrears. Freeze requests will apply only for periods that are not paid by the affiliate.</h5>
+                                        <br /><h5>PARAGRAFO 2: THE AFFILIATED who acquires six-month or annual plans, which has made use of his right of freezing in accordance with numeral 14.1, may request the freezing of the service for an additional term, for this purpose must cancel the value established for each day of freezing. He term of suspension in no case may be less (7) seven days. The freezing of services must be requested in writing, by letter delivered to any of the headquarters of the BefreeGym Sports Medical Club and at least eight (8) calendar days in advance or communicated through the customer service line 3672205 in Bogota, national hotline 018000123456. You can also either send a written communication to atención.sicvos@befree.gym, planelite@befree.gym. This plan must be active at the time of application and cannot be in arrears. </h5>
+                                        <br /><h5>PARAGRAFO 3: Freezes do not apply retroactively.</h5>
+                                        <br /> INCAPACIDAD: Medical disabilities: The medical disability of the AFILIADO to use the services of the BefreeGym Sports Medical Club, suspends the contract and will not have any charge, provided that it is certified by the doctor of the E.P.S. to which the AFILIADO is linked and verified by<h5>the physician Deportologos of one of the headquarters of the Sports Medical Club BefreeGym. Medical disability must be filed within thirty (30) days of the fulfillment of the disability. During the reported time of disability, you should not submit income, except in cases where you have a complementary medical service active. </h5>
+                                        <br /><h5>PARAGRAFO 1: For the Elite plan it will be applied as a forward-looking balance for the period established in the disability, as long as the debit has been effective.</h5>
+                                        <br />
+                                        <br /><h3>10. Affiliate Statements</h3>
+                                        <br /><h5>The AFFILIATED for the purposes of concluded this Agreement declares, represents and accepts the following:</h5>
+                                        <br /><h5>That one of the BefreeGym policies is continuous improvement in order to provide a better service to its affiliates every day. For this reason the AFILIADO understands and accepts that there may be discomfort or limitations of some contracted services, during remodeling or refurbishment works that the PROVIDER will perform in some of the BefreeGym Sports Medical Clubs. These situations will be reported to all members in advance at each headquarters of the BefreeGym Sports Medical Club, or through the www.befreegym.com.co website, or the BefreeGym customer service line: (+1) 3672205.</h5>
+                                        <br /> You know, understand and agree that the services offered and provided by independent<h5>third parties, autonomous and different from the PROVIDER in the facilities where the BefreeGym Sports Medical Clubs operate, are offered and provided independently by a third party other than the PROVIDER and, therefore, the PROVIDER is not responsible for any warranty, damage or damage arising from or may arise from such offerings,</h5> sale of products or provision of services.
+                                        <br />
+                                        <br /><h3>11. Contract address and court notices</h3>
+                                        <br /> For all judicial purposes, the city where the contract is signed is agreed as the place of performance<h5>of the obligations arising from this contract. The Parties agree that judicial notices to be made to them, by reason of this Agreement, shall be forwarded in writing only to the following addresses: THE PROVIDER: BefreeGym Carrera. 4 this 37b - 38 South Floor 2, Bogota, D.C. or AFILIADO (previously identified in the "personal information" page of this contract).</h5>
+                                        <br />
+                                        <br /><h3>12. Modifications</h3>
+                                        <br /> The PROVIDER<h5>may modify according to the needs of the service the TERMS AND CONDITIONS OF THE SERVICE PERFORMANCE set out in this document. If any modification is made, it will be informed in a timely manner and by appropriate and effective means to the AFILIADO.</h5>
+                                        <br />
+                                        <br /><h3>13. Providing additional services</h3>
+                                        <br /> Subscription of<h5>this agreement does not grant the AFILIADO the right to require the provision of Additional Medical Services. In order for the AFILIADO to access these services must pay the additional values that correspond for this concept, according to the current rates established by the PROVIDER according to the category of each headquarters of the BefreeGym Sports Medical Club, and which can be consulted by the AFILIADO in the Ingress Counter and with the commercial or integral Advisors.</h5>
+                                        <br />
+                                        <br /><h3>14. Requests, procedures and news</h3>
+                                        <br /> All requests, procedures and/or news that the AFILIADO has regarding the provision of<h5>the services contracted herein will be attended by the PROVIDER at any of its headquarters or in its customer service line: Línea Nacional 018000123456, Bogotá 0313672205 or email atencion.sicvos@befree.gym.</h5>
+                                        <br /><h5>PARAGRAFO: Requests or requirements made by the AFILIADO by any channel or medium other than those</h5> indicated in this separate will be understood as not made.
+                                        <br />
+                                        <br /><h3>15. Guests</h3>
+                                        <br /> Any AFFILIATE may invite for one (1) only one (1) person who must meet the following conditions: (i) not affiliated, (ii) that his/her membership status is inactive for at least the last<h5>three (3) months, (iii) who has no outstanding debts to the BeGyfreem Sports Medical Club, and (iv) who has not enjoyed any other courtesy in that period. With the prior authorization of the Manager of the respective headquarters of the BefreeGym Sports Medical Club, an AFILIADO may invite up to three (3) people simultaneously.</h5>
+                                        <br /> Guests must<h5>present ID, sign the Guest Agreement, fill out the Population Classification document, attend to the instructor's instructions during their practice and comply with the rules and regulations of the BefreeGym Sports Medical Club.</h5>
+                                        <br /> The BefreeGym Sports Medical Club reserves the right of admission of those guests whose presentation or personal conditions at the time of requesting admission<h5>are not in accordance with the public image of the BefreeGym Sports Medical Club, such as the use of jean or other kinds of trousers not suitable for the realization of sports practice, as well as inappropriate shoes. Guest admission policies are subject to change, without notice.</h5>
+                                        <br />
+                                        <br /><h3>16. Personal presentation</h3>
+                                        <br /> AFFILIATES whose personal presentation is deemed appropriate according to the public image of the BefreeGym Sports Medical Club, its rules or regulations, may enter<h5>the premises. Exercises should be practiced in the appropriate attire to the activity being performed. Each AFFILIATED must bring for your comfort a towel whose use is mandatory during and after each exercise. It is forbidden to take off clothes and / or circulate by the BefreeGym Sports Medical Club in swimsuit and / or without t-shirt. The only place arranged for AFFILIATES or Guests to change clothes at the headquarters of the BefreeGym Sports Medical Club is the Vestier and the bathroom.</h5>
+                                        <br /> The use of profity language or outfits with political or commercial propaganda of any kind will not be permitted at the<h5>headquarters of the BefreeGym Sports Medical Club. Once the practice of any exercise or routine is complete, the corresponding implements (dumbbells, discs, weights, bars, mats, etc.) should be left in place. To ensure the comfort of all and as a demonstration of courtesy, every AFFILIATED must clean the machines and implements that it uses after the exercise is finished, for this the BefreeGym Sports Medical Club has arranged at its headquarters fabric cloths and disinfectant liquids.</h5>
+                                        <br /> Anywhere in<h5>the BefreeGym Sports Medical Club is prohibited the consumption of cigarettes, alcoholic beverages, the use of steroids and/or drugs harmful to health or illicit, as well as the practice of any activity under its effects.</h5>
+                                        <br /> For entry<h5>into the wet zone (Turkish and sauna), the attire must be swimsuit dress and/or lysed trousers, towel and non-slip rubber sandals. The AFILIADO must make use of the shower before entering this area, and it is forbidden to shave or use creams or exfoliants in it.</h5>
+                                        <br />
+                                        <br /><h3>17. Lockers</h3>
+                                        <br /> It is<h5>clear that BefreeGym does NOT provide the service of custody of goods because lockers are available to customers. These spaces are simply a prerogative given by BefreeGym and, therefore, this prerogative is NOT part of the Contract for the Provision of Sports Medical Services signed with customers. In case the customer or AFFILIATED wishes at their own risk to use the lockers, they will have the obligation to place in the locker to use for as long as they take their training, a padlock of their property that is strong and safe. It is PROHIBITED to store in lockers items of value or personal documents. The BefreeGym Sports Medical Club assumes no custody or duty of preservation against the goods left in lockers WITH or WITHOUT padlock or corresponding to watches, wallets, personal documents, debit or credit cards, hearing aids of any kind, vehicle keys, jewelry, cash or cell phones, which it is expressly PROHIBITED to leave in the lockers for safety, therefore, the company assumes no responsibility for any good in case of loss or theft. Every day at the end of the day, the lockers of the headquarters will be opened, and the items found there will be considered abandoned and will be related in the log of objects found in headquarters. If the owner appears, the owner must provide sufficient information to guarantee his ownership of the item, and it will be delivered by the staff of the headquarters, after signature by the owner in the log. Items that are abandoned in lockers will be stored for a period of one (1) month. After this term they will be donated to a charity. The BefreeGym Sports Medical Club accepts no responsibility for items abandoned in lockers.</h5>
+                                        <br />
+                                        <br /><h3>18. Use of equipment and facilities</h3>
+                                        <br /> For the<h5>purpose of ensuring that all AFFILIATES receive equitable treatment, only equipment may be used for the time indicated in the sports medical program and established for each person. In addition, its use must be carried out in the manner authorized by the BefreeGym Sports Medical Club in accordance with its nature and in accordance with the manufacturer's instructions. For this purpose, the relevant instructions and billboards must be strictly complied with. AFFILIATES are not authorized to sell any good or service within the premises, or to provide personalized training services, or to move or modify equipment in any way. Weights and other loose parts of equipment may only be used in areas intended for this purpose and in accordance with the conditions established for use. If any AFFILIATED considers that one of the teams is functioning poorly, they must inform the Manager of the respective headquarters, in order for the rigor measures to be taken. Likewise, the use of cell phones and other electronic devices during the use of training equipment is prohibited. AFFILIATES and/or their guests are not allowed to use their own equipment at the Sports Medical Club facilities.</h5>
+                                        <br /> BefreeGym Sports Medical Club does not allow any physical training equipment to be used<h5>if the AFILIADO is taking any medicine that causes dizziness, vertigo or drowsiness, or if the MEMBER suffers a contraindicated medical condition. The AFILIADO assumes full responsibility for the physical injuries or accidents that occurred as a result of the practice of the exercises or activities that take place in the facilities of the BefreeGym Sports Medical Club, unless it is personalized training and THE AFFILIATED attends the instructions of the instructor or any damage to the training equipment. For your well-being and best results, the AFILIADO must follow all the instructions of the Medical Deportologos, the Physiotherapists and Trainers</h5>
+                                        <br /> If the AFILIADO wishes to use a physical training plan other than that designed for<h5>him by the BefreeGym Sports Medical Club, he must sign the Disclaimer document, if he cannot use or continue to use the facilities of the Sports Medical Club.</h5>
+                                        <br />
+                                        <br /><h3>19. Prohibitions</h3>
+                                        <br /><h5>The AFILIADO understands and knows that all the collaborators of the BefreeGym Sports Medical Club, have PROHIBITED, carrying out the following activities:</h5>
+                                        <br /> sell or<h5>market to AFFILIATES in a personal way, products (energy drinks or of any kind, food supplements, vitamins, calories, medicines, anabolics, clothing, sports accessories among others) or services (personalized or semi-personalized training inside or outside the premises of each venue other than those offered or marketed by the PROVIDER at the headquarters of the BeGyfreem Sports</h5> Medical Club according to the category of this.
+                                        <br /> The AFFILIATED who<h5>does not comply with and complies with this regulation, may not claim directly or indirectly with BefreeGym for the guarantees, consequences, damages or damages that these products or services marketed fraudulently</h5> may cause you.
+                                        <br /><h5>Non-compliance with this regulation generates in favor of the BefreeGym Sports Medical Club the right to unilateral termination of the contract on the AFILIADO.</h5>
+                                        <br /> As soon as the AFILIADO is aware of any fact such as those described above, or that is similar or similar, or that generates suspicion, must inform and inform the PROVIDER of this situation by written document, which may reside at the<h5>headquarters of the BefreeGym Sports Medical Club according to its category or rate, or to the emails: atencion.sicvos@befree.gym or planelite@befree.gym.</h5>
+                                        <br />
+                                        <br /><h3>20. Parking lot</h3>
+                                        <br /><h5>The PROVIDER expressly states that the services contracted by the AFILIADO do not include the parking service in any of the categories, rates and / or venues of the BefreeGym Sports Medical Club. There may be some venues of the BefreeGym Sports Medical Club that through agreements with third parties provide this benefit for the comfort of the AFILIADO; However, the AFILIADO will receive this service under the conditions and terms of provision of the service established by such third parties, conditions which the AFILIADO is obliged to consult and know in advance. It is not BefreeGym's obligation to provide parking service at any location. THE AFILIADO acknowledgeS and accepts that when you make use of these parking spaces, you are solely responsible</h5> for the integrity of your vehicle and what is inside, you are the manager of the parking lot.
+                                        <br />
+                                        <br /><h3>21. Hours of operation</h3>
+                                        <br /> The operating<h5>hours of each of the headquarters at the national level or its category, can be consulted by the AFFILIATES directly in the Counter of the respective headquarters, or through the website.</h5>
+                                        <br />
+                                        <br /><h3>22. Meals and drinks</h3>
+                                        <br /> Food may<h5>only be consumed in areas specifically intended by each headquarters for this purpose. Under no circumstances will it be allowed to be consumed in vistieres, wetlands or exercise areas. We appreciate the correct and proper use of the garbage containers installed for each type of waste.</h5>
+                                        <br />
+                                        <br /><h3>23. Minors</h3>
+                                        <br /><h5>All minors under eighteen (18) years of age and over thirteen (13) years of age may join the BefreeGym Sports Medical Club, for this purpose their parents and/or authorized representatives must enter into the respective unique service contract, copying this Regulation and signing the informed consent form, which they undertake to respect. For the use of facilities and equipment, the minor must attend the medical evaluation in advance. Children under the age of thirteen (13) may only enter those locations where there are areas specifically intended for use; others may not be admitted for security reasons, except in particular cases where authorized by the company.</h5>
+                                        <br />
+                                        <br /><h3>24. Recovery of time from affiliate non-assistance</h3>
+                                        <br /><h5>The BefreeGym Sports Medical Club is not responsible for recovery of affiliate time for non-assistance of the AFILIADO, after the AFFILIATE has started its PLAN. However, the above is exempt from the freezing and/or disability modalities described in the single service contract.</h5>
+                                        <br />
+                                        <br /><h3>25. Additional benefits from Members of the BefreeGym Sports Medical Club</h3>
+                                        <br /><h5>Preferential Rate in Access to Complementary Medical Services.</h5>
+                                        <br /> THE AFFILIATED may use for up to a term not more than thirty (30) calendar days from the first day of access, the services of<h5>the establishments of the BefreeGym Sports Medical Club located in other countries, provided that such Clubs belong to the category contracted by the customer or lower, without it being necessary to make additional payments to those established in this contract. Establishments that can be accessed by THE AFILIADO in other countries, can be consulted in www.bodytech.com.co. In the event that THE AFFILIATED, THE COMPANY BENEFITING FROM THE AGREEMENT AND/OR BENEFICIARY</h5> OF THE CONVENTION wishes to continue to make use of the services in the establishment outside the country for more than thirty (30) days, they must proceed with the payment of the corresponding affiliation.
+                                        <br />
+                                        <br /><h3>26. Conditions of use pool service</h3>
+                                        <br /><h5>The AFFILIATED must make mandatory use of: cap and swim dress in appropriate material, wear the dresser, comply with good sanitary practices.</h5>
+                                        <br /> It is<h5>prohibited: entry to children under twelve (12) years without the accompaniment of a responsible adult, the use of the pool to persons with visible wounds, lacerations or skin infections, entry into the pool in a drunken state or under the effect of psychoactive substances, consumption of food, beverages or smoking in the pool area as well as the entry of glass bottles, the entry to users who carry chains, necklaces, T-shirts or similar elements that allow mechanical entrapment, as well as the use of creams, cosmetics or oils of any kind, the practice of contact activities inside and outside the pool, such as nails, races and violent games.</h5>
+                                        <br />
+                                        <br /><h3>27. Additional rules</h3>
+                                        <br /><h5>BefreeGym Sports Medical Club reserves the right to modify, add or supplement these rules and regulations at any time at its discretion. All modifications, additions and so on, will take effect immediately. Contempt or violation thereof will result in the cancellation of the rights of the AFILIADO, as well as in cases where its behavior is considered annoying, disturbing, immoral or fraudulent.</h5>
+                                        <br /><h5>The BefreeGym Sports Medical Club is not responsible for the contracts, agreements or agreements made by AFFILIATES with any of the concessions or subarrendatarios located in the different locations (Independent Third Parties) such as: Aesthetic Clubs, Cafeteria, Warehouse, Hairdresser, Bronze Chambers, Spa's and others. For this reason, before contracting the services offered by third parties, the USER must have known and accepted the terms and conditions of the aforementioned services offered by them. The BefreeGym Sports Medical Club is also not responsible for the agreements made by THE AFILIADO with befreeGym staff in a personal way.</h5>
+                                        <br />
+                                        <br /><h3>28. PLAN: TRAIN AT HOME + MONTH OF TRAINING IN BefreeGym</h3>
+                                        <br /><h5>The plan includes:</h5>
+                                        <br /><h5>1 month of home training advised by a professional in physical culture (BefreeGym plant trainer)</h5>
+                                        <br /> Unique training<h5>plan oriented to your home goals in the BefreeGym APP</h5>
+                                        <br /> An initial<h5>30-minute phone call to define goals and training plan</h5>
+                                        <br /><h5>3 follow-up phone calls on days 7, 14, 21 after the plan is started.</h5>
+                                        <br /><h5>1 month of training at the BefreeGym headquarters chosen by the CONTRACTOR (after the panDEEMIA survey)</h5>
+                                        <br />
+                                        <br /><h5>THE MONTH IN SEDE INCLUDES</h5>
+                                        <br /><h5>1 month of membership at the venue you selected</h5>
+                                        <br /><h5>1 physical composition test performed by a trainer.</h5>
+                                        <br /> Unique training<h5>program focused on your goals</h5>
+                                        <br /> Unlimited Access<h5>to more than 60 group classes per week led by specialized coaches.</h5>
+                                        <br /><h5>Renewed Rate when purchasing a new plan.</h5>
+                                        <br />
+                                        <br />
+                                    </div>
+                                </p:dialog>
+                                <p:dialog header="Policy on the processing of personal data" widgetVar="Politica" modal="true" height="600">
+                                    <div class="container">
+                                        <br />
+                                        <br /><h1>BefreeGym Colombia Data Protection Policy October 2016</h1>
+                                        <br />
+                                        <br /><h3>1. Presentation</h3>
+                                        <br /> In order to ensure the protection and proper handling of the personal data to which<h5>it treats and to inform its owners about the rights, procedures and purpose to which they are subject; BefreeGym (as identified below), makes public this policy of processing personal data, in accordance with the provisions of the regulations associated with the Protection of Personal Data.</h5>
+                                        <br />
+                                        <br /><h4>a. Identification</h4>
+                                        <br /> This document<h5>contains the guiding parameters for the processing of personal data within the BefreeGym business group whose companies are identified below and the generic name of which shall apply for all purposes of this document:</h5>
+                                        <br />
+                                        <br /><h4>INVESTMENTS IN RECREATION SPORT AND HEALTH S.A. - BefreeGym, Colombian commercial company, with address in Cra. 4 Este s 37b - 38 South of the city of Bogotá D.C., Colombia.</h4>
+                                        <br />
+                                        <br /><h4>b. Legal Framework</h4>
+                                        <br /> The rules<h5>that develop the provisions applicable to this document are:</h5>
+                                        <br /><h5>Colombia:</h5>
+                                        <br /> Political Constitution<h5>of Colombia (Art. 15)</h5>
+                                        <br /><h5>Laws 1266/08 and 1581/12</h5>
+                                        <br /><h5>Decrees 1727/09, 2852/10, 1377/13 and 1047/15.</h5>
+                                        <br />
+                                        <br /><h3>2. Glossary</h3>
+                                        <br /> In order<h5>to facilitate the reading of this policy, this glossary is established, which seeks to integrate concepts of the relevant regulations of Colombia, including the most relevant terms for the Protection of Personal Data in BefreeGym, as well:</h5>
+                                        <br /><h5>Authorization: Prior, express and informed consent of the holder to carry out the Processing of personal data.</h5>
+                                        <br /><h5>Database: Organized set of personal data subject to Processing. The Peruvian standard defines it as a Personal Data Bank.</h5>
+                                        <br /> Client: BefreeGym customers are all those affiliated or not, who contract or receive sports medical services and complementary medical services, as well as those who participate in the different activities<h5>and sporting events outside the befreeGym facilities (e.g. running, cycling, triathlon and ultra trail activities among others).</h5>
+                                        <br /> Contributor: Through this term we group the people who<h5>perform functions for BefreeGym, without reference to the contracting scheme (direct or mission) or the company that links them.</h5>
+                                        <br /><h5>Personal Data: Any information linked to or that may be associated with one or more natural persons determined or determinable.</h5>
+                                        <br /><h5>Sensitive Data: A personal data that may reveal aspects such as racial or ethnic origin, political opinions or religious or philosophical convictions; as well as data relating to health or sexuality and biometric data (fingerprint, audio, video and/or photography).</h5>
+                                        <br /><h5>Manager: Natural or legal person, public or private, who carries out processing of personal data on assistance of the controller.</h5>
+                                        <br /><h5>Cross-border Flow: Corresponds to the actions of transferring and/or transmitting the data internationally, for</h5> the purposes of this document the term International Transfer or International Transmission will be used, as developed below.
+                                        <br /> Personal Data<h5>Protection Policy: Corresponds to the document in which BefreeGym develops the internal rules for the processing of personal data, seeking to ensure respect for the rights of the holders, based on the applicable regulations. The Peruvian standard calls it the Code of Conduct.</h5>
+                                        <br /><h5>Leaflet: Natural person who does not fit the definition of customer, but who has expressed an interest in contracting BefreeGym services directly or through third parties.</h5>
+                                        <br /><h5>Provider: It is up to any person providing inputs and/or services, regardless of whether the relationship is documented by contract. This term applies to employees or persons linked to the referred third party.</h5>
+                                        <br /><h5>Responsible: Natural or legal person, public or private, who determines the processing of personal data and the security measures applicable to its databases.</h5>
+                                        <br /><h5>Transfer: Any sending of personal data to a recipient who serves as the controller.</h5>
+                                        <br /><h5>Transmission: Any sending of personal data to a processor for the purpose of carrying out a specific processing on processing on part of the Controller.</h5>
+                                        <br /><h5>Holder: Natural person whose personal data are processed. Processing: Any operation or set of operations on personal data, such as collection, storage, use, circulation or deletion.</h5>
+                                        <br /><h5>Visitor: Every natural person, who enters the BefreeGym facility.</h5>
+                                        <br />
+                                        <br /><h3>3. Processing of personal data</h3>
+                                        <br /><h5>BefreeGym, advances activities of processing the personal data of its customers, prospects, suppliers, contractors, collaborators and visitors, in order to fully execute the social object of the corresponding contract.</h5>
+                                        <br /><h4>a. Purpose of the processing of personal data of customers and prospects:</h4>
+                                        <br /> The activities<h5>inherent in the fulfillment of medical-sports services contracts, under which our clients subscribe include: income control, medical-sports evaluation, development of training programs, nutrition (optional).</h5>
+                                        <br /><h5>In this regard, all contracts must have a clause that refers to compliance with this policy, in case of contracts prior to this policy it will be necessary to include by annex the advertised reference.</h5>
+                                        <br />
+                                        <br /><h5>However, in addition to the inherent processing activities described above, the personal data of customers and prospects collected by BefreeGym, may be used to:</h5>
+                                        <br />
+                                        <br /> - Send<h5>information related to news, launches promotions and marketing activities related to BefreeGym products and services.</h5>
+                                        <h5>- Offer complementary health services.</h5>
+                                        <h5>- Report price and service changes;</h5>
+                                        <h5>- Report directly on third-party alliances and promotions.</h5>
+                                        <h5>- Assess the quality of our service, and</h5>
+                                        <h5>- Conduct marketing studies associated with the preference for our products.</h5>
+                                        <h5>- Transfer or transmit personal data, for the sending of commercial information of the products and / or services marketed by BefreeGym.</h5>
+                                        <br />
+                                        <br /><h4>b. Purpose of the processing of personal data of contractors and suppliers:</h4>
+                                        <br /> In the face of employee contracts, it is considered that the activities necessary for the fulfillment of its object include the processing of<h5>financial data for payment purposes and social security obligations, as well as inclusion in the company's benefit program, performance assessments and training programs among others.</h5>
+                                        <br /><h5>For the purposes of BefreeGym's benefit plan, the collaborator may provide BefreeGym with personal data of his/her relatives, this information will be processed, for the sole purpose of benefiting the respective family members and therefore their authorization for it will be received under the figure of the stipulation by another. Referred to in Articles 1506 and ss of the Colombian Civil Code.</h5>
+                                        <br />
+                                        <br /><h4>d. Purpose of the processing of personal data of visitors:</h4>
+                                        <br /><h5>Within befreeGym's security and access control scheme, any natural person who requires entering the BefreeGym facility must be identified at the reception, where some personal data will be captured for the sole purpose of authorizing their entry and having a record of it.</h5>
+                                        <br />
+                                        <br /><h3>4. Special Personal Data</h3>
+                                        <br />
+                                        <br /><h4>a. Processing of sensitive data.</h4>
+                                        <br /><h5>BefreeGym currently accesses health information and biometric information of its customers, prospects, suppliers, contractors, collaborators and visitors; which is classified as sensitive personal information and therefore its treatment is advanced under the following premises:</h5>
+                                        <br /> Information regarding<h5>the health of customers.</h5>
+                                        <br /> This information is treated for the purpose of<h5>suggesting training programs, monitoring progress and results, identifying risk for physical activity, as well as having sufficient information in case of medical emergency and/or first aid.</h5>
+                                        <br /> Collection<h5>and processing requires written authorization from the holder.</h5>
+                                        <br /><h5>Biometric information (fingerprint, audio, video and/or photography).</h5>
+                                        <br /> This information is treated for the sole purpose of having a security scheme that allows users to facilitate<h5>access, fully identify video surveillance, the security of BefreeGym's assets, its suppliers and visitors.</h5>
+                                        <br /> Collection and processing will be optional and requires written authorization from the owner, with the exception of the information obtained by the video surveillance scheme, for which a privacy notice located<h5>in the facilities of the BefreeGym locations that informs attendees of the presence and purpose of the cameras will suffice, as developed in the separate 5th. Authorization of treatment.</h5>
+                                        <br />
+                                        <br /><h4>b. Data Processing of Minors.</h4>
+                                        <br /><h5>BefreeGym's portfolio of services contains services aimed at children and adolescents, therefore BefreeGym advances information processing activities of this population for the sole purpose of providing related services.</h5>
+                                        <br /><h5>The processing of personal data of this population will only be advanced with the express and informed authorization of one of the parents or representatives of the minor and must be obtained by any means that may be consulted and subsequently verification.</h5>
+                                        <br /> The authorization to process personal data of minors will be optional and must be provided by your legal representative at the time of signing the contract for the provision<h5>of sports medical services or complementary medical services as the case may be.</h5>
+                                        <br />
+                                        <br /><h3>5. Rights that assist you as Owner</h3>
+                                        <br /> In accordance with the provisions of the current regulations on the protection of personal data, the owner of the personal data has the right to authorize<h5>or revoke the processing of his information, as well as to know, update, rectify or delete the personal data of which he is the owner or has representation.</h5>
+                                        <br />
+                                        <br /><h4>a. Authorization of processing:</h4>
+                                        <br /> The authorization<h5>for the processing requested by BefreeGym, will meet the budgets developed by the principle of freedom and / or consent; this implies</h5> that the means willing to collect personal data, will be legitimate and honest.
+                                        <br />
+                                        <br /> Authorization by<h5>unwred means.</h5>
+                                        <br /><h5>In principle, the authorisation will be obtained in writing, however, it is contemplated to be reception through unequivocal acts and/or verbally, for this it is necessary</h5> to have sufficient means of proof to demonstrate compliance with the provisions of this policy.
+                                        <br />
+                                        <br /><h5>Video Surveillance Cameras.</h5>
+                                        <br /><h5>BefreeGym, has a security scheme that contemplates the use of video surveillance cameras in each of its headquarters, with the exclusive purpose of monitoring the security of its goods, as well as the security of its customers, suppliers and visitors.</h5>
+                                        <br /><h5>BefreeGym has implemented a command center located in the regional administrative headquarters, which can only be accessed</h5> by authorized personnel for evidence assessment.
+                                        <br /><h5>All monitored venues, have a privacy notice that informs about the advanced activity, therefore when accessing them, the owner unequivocally authorizes BefreeGym, to process the associated information.</h5>
+                                        <br />
+                                        <br /><h5>The Referral Data.</h5>
+                                        <br /><h5>In the course of its commercial activity, BefreeGym may advance marketing campaigns that provide benefits for the delivery of contact information from third parties (referred).</h5>
+                                        <br /> At the end of the corresponding befreeGym campaign, you will proceed to contact the data subject in order to obtain the corresponding authorization, for this purpose, if the holder requests the deletion of the data, it will be deleted according to the procedure established for<h5>this purpose and if it is not possible to contact the owner, BefreeGym will have a period of 3 months to delete the corresponding information.</h5>
+                                        <br />
+                                        <br /><h4>b. Revoke authorization:</h4>
+                                        <br /> The holder<h5>shall have the right to withdraw his/her consent at any time, provided that it is not prevented by a legal or contractual provision. For that purpose, this revocation may be partial.</h5>
+                                        <br /> Revocation will<h5>not affect the lawfulness of the processing based on the consent previously granted.</h5>
+                                        <br />
+                                        <br /><h4>c. Know the data:</h4>
+                                        <br /> The owner may at any time consult whether his personal data or those<h5>he represents, are stored in the databases of BefreeGym, also, he can consult on the use that has been given to his data.</h5>
+                                        <br />
+                                        <br /><h4>d. Rectification and updating of data:</h4>
+                                        <br /> The owner<h5>has the right to request BefreeGym to update and/or rectify incomplete or inaccurate information of the personal data of his own or those he represents. For this purpose BefreeGym will update and/or rectify the information, at the</h5> times provided for in the apart from Procedures, which is located later in this Policy.
+                                        <br /> In order<h5>to correctly advance this procedure, the holder must clearly inform the correction it requires, providing the necessary documents for this purpose.</h5>
+                                        <br />
+                                        <br /><h4>e. Data deletion:</h4>
+                                        <br /><h5>BefreeGym is obliged to respond to requests to delete and/or delete your personal data or those you represent when:</h5>
+                                        <br /> Consider<h5>that they are not being treated in accordance with the principles, duties and obligations provided for in the current regulations.</h5>
+                                        <br /> They are<h5>no longer necessary or relevant for the purpose for which they were collected.</h5>
+                                        <br /> The period necessary for the fulfillment<h5>of the purposes for which they were collected has been exceeded. This deletion implies the total or partial deletion of personal information as requested by the owner in the records, files, databases or processing carried out by BefreeGym.</h5>
+                                        <br /> This<h5>right is not absolute so BefreeGym can report its refusal to respond to the request at the following events:</h5>
+                                        <br /> The holder<h5>has a legal or contractual duty to remain in the database.</h5>
+                                        <br /> The deletion<h5>of data hinders legal or administrative proceedings related to tax obligations, the investigation and prosecution of crimes or the updating of administrative sanctions.</h5>
+                                        <br /> The data are necessary to protect the legally protected interests of the owner; to take an<h5>action in the public interest, or to comply with an obligation legally acquired by the owner.</h5>
+                                        <br />
+                                        <br /><h3>6. Data Protection Officer</h3>
+                                        <br /> BEfreeGym designates the official in charge of THE CUSTOMER SERVICE CAPTAINCY as the person who will receive, process and channel the<h5>different requests of the holders, processing them in the terms, deadlines and conditions defined in this policy.</h5>
+                                        <br /><h5>Contact Details:</h5>
+                                        <h5>Customer Service:</h5>
+                                        <h5>atencion.sicvos@befree.gym</h5>
+                                        <h5>Phone 3672205 Bogota.</h5>
+                                        <br />
+                                        <br /><h3>7. Procedures</h3>
+                                        <br /> The holder or representative of personal data may at any time<h5>refer inquiries and/or complaints to BefreeGym, who will be obliged to respond within a term that may not exceed ten (10) business days for consultations or fifteen (15) business days for claims.</h5>
+                                        <br /> In the event that the communication is incomplete, prior to the fulfilment of<h5>the stated term, BefreeGym will contact the holder, requesting the necessary information to attend the communication, once it receives a response with all the required information, it will be obliged to respond to the request within five (5) working days.</h5>
+                                        <br />
+                                        <br /><h3>8. File</h3>
+                                        <br /> In order to retain the authorizations obtained for the processing of personal data, as well as the physical and<h5>logical archive of the information controlled by this policy, BefreeGym will establish by means of documentary retention tables the parameters of file and retention of the data.</h5>
+                                        <br /> Without prejudice<h5>to legal or contractual obligations; personal information being treated by BefreeGym shall be kept for a maximum period of five (5) years from the date of termination of contract for clients, collaborators and contractors and 4 months for prospects and visitors.</h5>
+                                        <br /><h5>In this regard, BefreeGym may hire a</h5> third party to be responsible for preserving the physical files or electronic repositories it determines, the delivery of which will be as a repository and no access to the information will be granted, therefore this activity itself does not constitute transfer or transmission of the data.
+                                        <br />
+                                        <br /><h3>9. Security</h3>
+                                        <br /> Due to the importance of having mechanisms for the protection of personal data resting in<h5>its databases, BefreeGym has an Information Security Policy, which is responsible for framing the security guidelines</h5> that the organization must address, within which the obligation to assign a security officer of the personal databases is highlighted, which will ensure compliance with the associated parameters.
+                                        <br />
+                                        <br /><h3>10. Transfer and/or transmission of personal data</h3>
+                                        <br /><h5>BefreeGym may transfer or transmit personal data to recipients located outside and within the national territory, provided that it has express authorization to do so or that the applicable regulations authorize the flow without</h5> the authorization of the owner.
+                                        <br /> In cases<h5>where BefreeGym deems it necessary to advance transmission and/or transfer activities, it shall include a clause in the corresponding contract relating to the obligations of the CONTRACTOR, the compliance and assurance of the postulates of this policy and the current regulations.</h5>
+                                        <br /> Compliance with this guideline shall be adopted<h5>within six (6) months</h5> of the entry into force of this policy.
+                                        <br />
+                                        <br /><h3>11. Validity</h3>
+                                        <br /><h5>This policy applies as of (22) September 2016 and leaves the</h5> special regulations or manuals that could have been adopted in BefreeGym without effect.
+                                        <br />
+                                        <br />
+                                    </div>
+                                </p:dialog>
+                            <h:form>
+                                <div class="ini">
+                                    I already have an account. <h:commandLink value=" Log in" action="#{user.navU.login()}" />
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+                <div class="cajafin">
+                    <div class="cajafin1">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.2245489510838!2d-74.094058285268!3d4.553583196691625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f989b9fa70f49%3A0x840ad0cb913333bb!2sBe%20Free%20GYM!5e0!3m2!1ses!2sco!4v1575395617147!5m2!1ses!2sco" allowfullscreen="" />
+                    </div>
+                    <div class="cajafin2">
+                        <a href="../../../index.xhtml"><h5>BEFREE GYM® Crossfit</h5></a>
+                        <a href="https://www.reebok.co/"><h6>Reebok®</h6></a>
+                        <a href="https://www.google.com/maps/place/Be+Free+GYM/@4.5535832,-74.0940583,17z/data=!3m1!4b1!4m5!3m4!1s0x8e3f989b9fa70f49:0x840ad0cb913333bb!8m2!3d4.5535832!4d-74.0918696?hl=es"><h6>● Address: Cra. 4 Este # 37b - 38 Sur, Bogotá</h6></a>
+                        <h6>● Phone: 3672205</h6>
+                    </div>
+                    <div class="cajafin3">
+                        <h5>Follow us on Facebook:</h5>
+                        <a href="https://www.facebook.com/befreegymvictoria/"><h:graphicImage value="#{resource['/img/Inicio/facebook.png']}" alt="" title="Facebook: Befree Gym" /></a>
+                        <div class="espac4" />
+                        <a href="https://www.facebook.com/profile.php?id=100007351306475"><h:graphicImage value="#{resource['/img/Inicio/facebook.png']}" alt="" title="Brandon Andres Palencia" /></a>
+                    </div>
+                </div>
+            </div>
+    </h:body>
+</html>

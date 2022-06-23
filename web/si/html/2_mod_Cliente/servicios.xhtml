@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | Inicio</title>
+	<h:outputStylesheet library="css" name="styles3.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="js" name="jquery-3.4.1.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}" />
+    </h:head>
+    <h:body>
+            <div class="caja">
+                <div class="barraprin">
+                    <div class="logo"></div>
+                    <div class="logo1">
+                        <h:graphicImage value="#{resource['/img/Inicio/PRIN1.jpg']}" class="img-fluid" title="Logo empresa" alt="Responsive image" />
+                    </div>
+                    <div class="logo"></div>
+                </div>
+                <h:form>
+                <div class="cajabar">
+                    <div class="cajabar1">
+                        <nav class="navbar-center">
+                            <div class="navega">
+                                <ul>
+                                    <li><a class=""><h:commandButton value="Inicio" action="#{user.navU.home()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="¿Quiénes somos?" action="#{user.navU.about()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class="inici"><h:commandButton value="Servicios" action="#{service.rutina.cservices(user.user.id)}" class="btn btn-sm btn-block text-white" /></a></li>
+                                    <li><a class=""><h:commandButton value="PQRS" action="#{service.nav.pqrs()}" class="btn btn-sm btn-block" /></a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="cajabar1 sticky-top">
+                        <div class="pos-f-t">
+                            <div class="collapse" id="navbarToggleExternalContent">
+                                <div class="p-3" style="background: #2A2627;">
+                                    <h3 class="text-white h5">Perfil de: <h:commandLink value="#{user.user.getpNombre()} #{user.user.getpApellido()}" action="#{user.user.profile()}" /></h3>
+                                    <h:commandButton value="Cerrar sesión" action="#{user.navU.login()}" class="btn btn-danger" />
+                                </div>
+                            </div>
+                            <nav class="navbar navbar-dark">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon" />
+                                </button>
+                                <h:commandButton value="English" action="#{user.navU.homeen()}" class="btn btn-sm text-white" />
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                </h:form>
+                <div class="espac0" />
+                <div class="cajaconte">
+                    <div class="cajaconte1">
+                        <h:form>
+                            <div class="cajaconte1-1">
+                                <div class="cajaconte1-1-1">
+                                    <div class="cajaconte1-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/Servicios/training.png']}" alt="" />
+                                    </div>
+                                    <div class="espac2" />
+                                    <div class="cajaconte1-1-1-2">
+                                        <ul><li><ul><li>
+                                            <a class="rut"><h:commandButton value="Rutina" action="#{service.rutina.cservices(user.user.id)}" class="btn btn-sm btn-block text-white" /></a>
+                                        </li></ul></li></ul>
+                                    </div>
+                                </div>
+                                <div class="espac1" />
+                                <div class="cajaconte1-1-1">
+                                    <div class="cajaconte1-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/Servicios/checklist.png']}" alt="" />
+                                    </div>
+                                    <div class="espac2" />
+                                    <div class="cajaconte1-1-1-2">
+                                        <ul><li><ul><li>
+                                            <a class="valo"><h:commandButton value="Valoraciòn" action="#{service.valo.valoration(user.user.id)}" class="btn btn-sm btn-block text-white" /></a>
+                                        </li></ul></li></ul>
+                                    </div>
+                                </div>
+                                <div class="espac1" />
+                                <div class="cajaconte1-1-1">
+                                    <div class="cajaconte1-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/Servicios/calendar.png']}" alt="" />
+                                    </div>
+                                    <div class="espac2" />
+                                    <div class="cajaconte1-1-1-2">
+                                        <ul><li><ul><li>
+                                            <a class="mens"><h:commandButton value="Mensualidad" action="#{service.mem.mensualidad(user.user.id)}" class="btn btn-sm btn-block text-white" /></a>
+                                        </li></ul></li></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </h:form>
+                    </div>
+                    <div class="cajaconte2">
+                        <div class="cajaconte2-1">
+                            <h1>Mi rutina:</h1>
+                        </div>
+                        <div class="cajaconte2-2">
+                            <div class="cajaconte2-2-1">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <h:commandButton class="btn btn-danger btn-block btn-lg" type="button" value="Día número: #{service.rutina.cantidad}"/>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <div class="cajaconte2-2-1-1">
+                                                    <div class="cajaconte2-2-1-1-1">
+                                                        <div class="cajaconte2-2-1-1-1-1">
+                                                            <h3>Rutina del día</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cajaconte2-2-1-1-2">
+                                                        <h4>Nota:</h4>
+                                                        <h6>Recuerde calentar correctamente el cuerpo antes de iniciar su rutina.</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="espac0" />
+                                                <div class="cajaconte2-2-1-2">
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <div class="list-group" id="list-tab" role="tablist">
+                                                                <a class="list-group-item list-group-item-action list-group-item-dark active" id="list-1-13-list" data-toggle="list" href="#list-1-13" role="tab" aria-controls="home">1er ejercicio.</a>
+                                                                <a class="list-group-item list-group-item-action list-group-item-dark" id="list-2-13-list" data-toggle="list" href="#list-2-13" role="tab" aria-controls="profile">2do ejercicio.</a>
+                                                                <a class="list-group-item list-group-item-action list-group-item-dark" id="list-3-13-list" data-toggle="list" href="#list-3-13" role="tab" aria-controls="messages">3er ejercicio.</a>
+                                                                <a class="list-group-item list-group-item-action list-group-item-dark" id="list-4-13-list" data-toggle="list" href="#list-4-13" role="tab" aria-controls="settings">4to ejercicio.</a>
+                                                                <a class="list-group-item list-group-item-action list-group-item-dark" id="list-5-13-list" data-toggle="list" href="#list-5-13" role="tab" aria-controls="profile">5to ejercicio.</a>
+                                                                <a class="list-group-item list-group-item-action list-group-item-dark" id="list-6-13-list" data-toggle="list" href="#list-6-13" role="tab" aria-controls="messages">6to ejercicio.</a>
+                                                                <a class="list-group-item list-group-item-action list-group-item-dark" id="list-7-13-list" data-toggle="list" href="#list-7-13" role="tab" aria-controls="settings">7mo ejercicio.</a>
+                                                                <a class="list-group-item list-group-item-action list-group-item-dark" id="list-8-13-list" data-toggle="list" href="#list-8-13" role="tab" aria-controls="profile">8vo ejercicio.</a>
+                                                                <a class="list-group-item list-group-item-action list-group-item-dark" id="list-9-13-list" data-toggle="list" href="#list-9-13" role="tab" aria-controls="messages">9no ejercicio.</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <div class="tab-content" id="nav-tabContent">
+                                                                <div class="tab-pane fade show active" id="list-1-13" role="tabpanel" aria-labelledby="list-1-13-list">
+                                                                    <div class="cajaconte2-2-1-2-1">
+                                                                        <h5><h:outputLabel value="#{service.rutina.rutina.ejercicio1}" /></h5>
+                                                                        <h:outputLabel value="#{service.rutina.rutina.descripciónE1}" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/1ar.jpg']}" alt="" />
+                                                                        <div class="espac1" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/1-1ar.jpg']}" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="list-2-13" role="tabpanel" aria-labelledby="list-2-13-list">
+                                                                    <div class="cajaconte2-2-1-2-2">
+                                                                        <h5><h:outputLabel value="#{service.rutina.rutina.ejercicio2}" /></h5>
+                                                                        <h:outputLabel value="#{service.rutina.rutina.descripciónE2}" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/2bs.jpg']}" alt="" />
+                                                                        <div class="espac1" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/2-2bs.jpeg']}" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="list-3-13" role="tabpanel" aria-labelledby="list-3-13-list">
+                                                                    <div class="cajaconte2-2-1-2-3">
+                                                                        <h5><h:outputLabel value="#{service.rutina.rutina.ejercicio3}" /></h5>
+                                                                        <h:outputLabel value="#{service.rutina.rutina.descripciónE3}" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/3bp.png']}" alt="" />
+                                                                        <div class="espac1" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/3-3bp.jpg']}" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="list-4-13" role="tabpanel" aria-labelledby="list-4-13-list">
+                                                                    <div class="cajaconte2-2-1-2-4">
+                                                                        <h5><h:outputLabel value="#{service.rutina.rutina.ejercicio4}" /></h5>
+                                                                        <h:outputLabel value="#{service.rutina.rutina.descripciónE4}" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/4bj.jpg']}" alt="" />
+                                                                        <div class="espac1" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/4-4bj.jpg']}" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="list-5-13" role="tabpanel" aria-labelledby="list-5-13-list">
+                                                                    <div class="cajaconte2-2-1-2-5">
+                                                                        <h5><h:outputLabel value="#{service.rutina.rutina.ejercicio5}" /></h5>
+                                                                        <h:outputLabel value="#{service.rutina.rutina.descripciónE5}" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/5du.jfif']}" alt="" />
+                                                                        <div class="espac1" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/5-5du.jpg']}" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="list-6-13" role="tabpanel" aria-labelledby="list-6-13-list">
+                                                                    <div class="cajaconte2-2-1-2-6">
+                                                                        <h5><h:outputLabel value="#{service.rutina.rutina.ejercicio6}" /></h5>
+                                                                        <h:outputLabel value="#{service.rutina.rutina.descripciónE6}" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/6fs.jpg']}" alt="" />
+                                                                        <div class="espac1" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/6-6fs.jpg']}" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="list-7-13" role="tabpanel" aria-labelledby="list-7-13-list">
+                                                                    <div class="cajaconte2-2-1-2-7">
+                                                                        <h5><h:outputLabel value="#{service.rutina.rutina.ejercicio7}" /></h5>
+                                                                        <h:outputLabel value="#{service.rutina.rutina.descripciónE7}" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/7fs.jpg']}" alt="" />
+                                                                        <div class="espac1" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/7-7fs.jpg']}" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="list-8-13" role="tabpanel" aria-labelledby="list-8-13-list">
+                                                                    <div class="cajaconte2-2-1-2-8">
+                                                                        <h5><h:outputLabel value="#{service.rutina.rutina.ejercicio8}" /></h5>
+                                                                        <h:outputLabel value="#{service.rutina.rutina.descripciónE8}" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/8hr.jpg']}" alt="" />
+                                                                        <div class="espac1" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/8-8hr.jpg']}" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="list-9-13" role="tabpanel" aria-labelledby="list-9-13-list">
+                                                                    <div class="cajaconte2-2-1-2-9">
+                                                                        <h5><h:outputLabel value="#{service.rutina.rutina.ejercicio9}" /></h5>
+                                                                        <h:outputLabel value="#{service.rutina.rutina.descripciónE9}" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/9os.jpg']}" alt="" />
+                                                                        <div class="espac1" />
+                                                                        <h:graphicImage value="#{resource['/img/Servicios/Rutina/9-9os.jpg']}" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cajaconte2-2-2">
+                                <div id="cal"> 
+                                    <div class="header"> 
+                                        <span class="left button" id="prev"> ⟨ </span> 
+                                        <span class="left hook" /> 
+                                        <span class="month-year" id="label"> Julio 2020 </span> 
+                                        <span class="right hook" /> 
+                                        <span class="right button" id="next"> ⟩ </span>
+                                    </div> 
+                                    <table id="days"> 
+                                        <tbody>
+                                            <tr>
+                                                <td>Dom </td> 
+                                                <td>Lun </td> 
+                                                <td>Mar </td> 
+                                                <td>Mie </td> 
+                                                <td>Jue </td> 
+                                                <td>Vie </td> 
+                                                <td>Sab </td>
+                                            </tr>
+                                        </tbody>
+                                    </table> 
+                                    <div id="cal-frame"> 
+                                        <table class="curr"> 
+                                            <tbody>
+                                                <tr><td class="nil">28</td><td class="nil">29</td><td class="nil">30</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+                                                <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+                                                <tr><td>12</td><td class="today">13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+                                                <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr> 
+                                                <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="nil">1</td></tr>
+                                            </tbody> 
+                                        </table>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cajafin4">
+                    <div class="cajafin4-1">
+                        <h:graphicImage value="#{resource['/img/Inicio/sicvos w.png']}" title="Logo sistema" alt="Responsive image" />
+                    </div>
+                    <div class="cajafin4-2">
+                        <h6>| David Leonardo Salcedo Sierra</h6>
+                        <h6>| Nixon Giovanny Pardo Téllez</h6>
+                        <h6>| Luis Alfredo Sarmiento Brango</h6>
+                        <h6>| SENA CSF, 1906818, GAES 3</h6>
+                        <h6>| © Copyright 2019, Bogotá DC, Colombia</h6>
+                    </div>
+                    <div class="cajafin4-3">
+                        <h:graphicImage value="#{resource['/img/Inicio/sena.png']}" title="Logo sena" alt="Responsive image" />
+                    </div>
+                </div>
+            </div>
+    </h:body>
+</html>
