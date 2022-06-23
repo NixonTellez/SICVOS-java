@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | Sales</title>
+	<h:outputStylesheet library="css" name="styles4.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="js" name="jquery-3.4.1.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}" />
+    </h:head>
+    <h:body>
+        <div class="caja">
+            <div class="barraprin">
+                <div class="logo"></div>
+                <div class="logo1">
+                    <h:graphicImage value="#{resource['/img/Inicio/PRIN1e.jpg']}" class="img-fluid" title="Logo empresa" alt="Responsive image" />
+                </div>
+                <div class="logo"></div>
+            </div>
+            <h:form>
+            <div class="cajabar">
+                <div class="cajabar1">
+                    <nav class="navbar-center">
+                        <div class="navega">
+                            <ul>
+                                <li><a class=""><h:commandButton value="Home" action="#{user.navU.home()}" class="btn btn-sm btn-block" /></a></li>
+                                <li><a class=""><h:commandButton value="About Us" action="#{user.navU.about()}" class="btn btn-sm btn-block" /></a></li>
+                                <li><a class="inici"><h:commandButton value="Sales" action="#{sale.buy.sales()}" class="btn btn-sm btn-block text-white" /></a></li>
+                                <li><a class=""><h:commandButton value="Inventories" action="#{inventory.stock.inventory()}" class="btn btn-sm btn-block" /></a></li>
+                                <li><a class=""><h:commandButton value="Assessment" action="#{service.nav.valore()}" class="btn btn-sm btn-block" /></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="cajabar1 sticky-top">
+                    <div class="pos-f-t">
+                        <div class="collapse" id="navbarToggleExternalContent">
+                            <div class="p-3" style="background: #2A2627;">
+                                <h3 class="text-white h5">Profile of: <h:commandLink value="#{user.user.getpNombre()} #{user.user.getpApellido()}" action="#{user.user.profile()}" /></h3>
+                                <h:commandButton value="Sign off" action="#{user.navU.login()}" class="btn btn-danger" />
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-dark">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon" />
+                            </button>
+                            <h:commandButton value="Español" action="#{user.navU.homeen()}" class="btn btn-sm text-white" />
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            </h:form>
+            <div class="espac3" />
+            <div class="cajaconte">
+                <div class="cajaconte1">
+                    <h:form>
+                        <div class="cajaconte1-1">
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Ventas/shopping-bag (1).png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="nven"><h:commandButton value="New sale" action="#{sale.buy.sales()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Ventas/checklist (1).png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="hven"><h:commandButton value="Sales history" action="#{sale.buy.hven()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+                <div class="cajaconte2">
+                    <div class="cajaconte2-1"><h1>New sale:</h1></div>
+                    <h:form>
+                        <div class="cajaconte2-2">
+                            <div class="cajaconte2-2-1">
+                                <div class="cajaconte2-2-1-1">
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" />
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="1" />
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="2" />
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="3" />
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="4" />
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="5" />
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="6" />
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <h:graphicImage value="#{resource['img/Ventas/boca.png']}" class="d-block w-100" alt="" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <h:graphicImage value="#{resource['img/Ventas/agua.png']}" class="d-block w-100" alt="" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <h:graphicImage value="#{resource['img/Ventas/bebi.png']}" class="d-block w-100" alt="" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <h:graphicImage value="#{resource['img/Ventas/c4.jpg']}" class="d-block w-100" alt="" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <h:graphicImage value="#{resource['img/Ventas/prot.png']}" class="d-block w-100" alt="" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <h:graphicImage value="#{resource['img/Ventas/iso.png']}" class="d-block w-100" alt="" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <h:graphicImage value="#{resource['img/Ventas/inten.png']}" class="d-block w-100" alt="" />
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true" />
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true" />
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cajaconte2-2-1-2">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput1">Select date: </label>
+                                        <p:inputText class="form-control" value="#{sale.buy.fecha}" id="formGroupExampleInput1" type="date" placeholder="" required="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput2">Select product: </label>
+                                        <h:selectOneMenu id="producto1" class="form-control form-control-lg" value="#{sale.buy.idProd}" >
+                                            <f:selectItem itemLabel="Product ..." itemValue="" />
+                                            <f:selectItems value="#{sale.buy.listaPr}" var="producto" itemValue="#{producto.idProducto}" itemLabel="#{producto.idProducto} - #{producto.nombre}" />
+                                        </h:selectOneMenu>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput3">Enter the quantity of the product (s): </label>
+                                        <div class="espac4" />
+                                        <p:inputText class="form-control" id="exampleInputText3" value="#{sale.buy.cantidad}" />
+                                    </div>
+                                    <p:commandButton value="Add" class="btn btn-danger btn-block" actionListener="#{sale.buy.agregar()}" update="dtDetalle, totalPagar" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cajaconte2-3">
+                            <div class="cajaconte2-3-1">
+                            <div class="espac3" />
+                                <h2>Subtotal:</h2>
+                                <div class="espac1" />
+                                <p:dataTable class="table" styleClass="table table-hover" style="table" id="dtDetalle" value="#{sale.buy.listDet}" var="d" paginator="true" rows="4" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {NextPageLink} {LastPageLink}"
+                                             currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" pageLinks="5" >
+                                    <p:column class="text-white bg-danger" headerText="Product ID" >
+                                        <p:outputLabel value="#{d.idProducto.idProducto}" />
+                                    </p:column>
+                                    <p:column headerText="Name">
+                                        <p:outputLabel value="#{d.idProducto.nombre}"/>
+                                    </p:column>
+                                    <p:column headerText="Quantity">
+                                        <p:outputLabel value="#{d.cantidad}" />
+                                    </p:column>
+                                    <p:column headerText="Unit value">
+                                        <p:outputLabel value="#{d.idProducto.valorVenta}" />
+                                    </p:column>
+                                </p:dataTable>
+                                <div class="espac1" />
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Price to pay:</span>
+                                    </div>
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <h:outputText id="totalPagar" class="form-control" value="#{sale.buy.totalVenta}" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cajaconte2-4">
+                            <div class="cajaconte2-4-1">
+                                <div class="espac3" />
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput1">Select the payment method: </label>
+                                        <h:selectOneMenu id="producto" class="form-control form-control-lg" value="#{sale.buy.sale.tipoPago}" >
+                                            <f:selectItem itemLabel="Payment type..." itemValue="" />
+                                            <f:selectItem itemLabel="Cash" itemValue="Efectivo" />
+                                            <f:selectItem itemLabel="Card" itemValue="Tarjeta" />
+                                        </h:selectOneMenu>
+                                    </div>
+                                <h:commandButton value="Make sale" action="#{sale.buy.addVenta(user.user.id)}" class="btn btn-danger btn-block" />
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+            <div class="cajafin4">
+                <div class="cajafin4-1">
+                    <h:graphicImage value="#{resource['/img/Inicio/sicvos w.png']}" title="Logo sistema" alt="Responsive image" />
+                </div>
+                <div class="cajafin4-2">
+                    <h6>| David Leonardo Salcedo Sierra</h6>
+                    <h6>| Nixon Giovanny Pardo Téllez</h6>
+                    <h6>| Luis Alfredo Sarmiento Brango</h6>
+                    <h6>| SENA CSF, 1906818, GAES 3</h6>
+                    <h6>| © Copyright 2019, Bogotá DC, Colombia</h6>
+                </div>
+                <div class="cajafin4-3">
+                    <h:graphicImage value="#{resource['/img/Inicio/sena.png']}" title="Logo sena" alt="Responsive image" />
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>

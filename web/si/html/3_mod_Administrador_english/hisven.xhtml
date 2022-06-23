@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | Sales (Sales History)</title>
+	<h:outputStylesheet library="css" name="styles4hv.css" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="js" name="jquery-3.4.1.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="caja">
+                <div class="barraprin">
+                    <div class="logo"></div>
+                    <div class="logo1">
+                        <h:graphicImage value="#{resource['/img/Inicio/PRIN1e.jpg']}" class="img-fluid" title="Logo empresa" alt="Responsive image" />
+                    </div>
+                    <div class="logo"></div>
+                </div>
+                <div class="cajabar">
+                    <div class="cajabar1">
+                        <nav class="navbar-center">
+                            <div class="navega">
+                                <ul>
+                                    <li><a class=""><h:commandButton value="Home" action="#{user.navU.ahome()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="About Us" action="#{user.navU.aabout()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Reports" action="#{user.report.reports()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class="inici"><h:commandButton value="Sales" action="#{sale.buy.sales()}" class="btn btn-sm btn-block text-white" /></a></li>
+                                    <li><a class=""><h:commandButton value="Inventories" action="#{inventory.stock.inventory()}" class="btn btn-sm btn-block" /></a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="cajabar1 sticky-top">
+                        <div class="pos-f-t">
+                            <div class="collapse" id="navbarToggleExternalContent">
+                                <div class="p-3" style="background: #2A2627;">
+                                    <h3 class="text-white h5">Profile of: <h:commandLink value="#{user.user.getpNombre()} #{user.user.getpApellido()}" action="#{user.user.profile()}" /></h3>
+                                    <h:commandButton value="Sign off" action="#{user.navU.login()}" class="btn btn-danger" />
+                                </div>
+                            </div>
+                            <nav class="navbar navbar-dark">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon" />
+                                </button>
+                                <h:commandButton value="Español" action="#{user.navU.homeen()}" class="btn btn-sm text-white" />
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="espac3" />
+                <div class="cajaconte">
+                    <div class="cajaconte1">
+                        <div class="cajaconte1-1">
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Ventas/shopping-bag (1).png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="nven"><h:commandButton value="New sale" action="#{sale.buy.sales()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Ventas/checklist (1).png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="hven"><h:commandButton value="Sales history" action="#{sale.buy.hven()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Ventas/staff.png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="mem"><h:commandButton value="Memberships" action="#{service.mem.membre()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Ventas/promotion.png']}" alt="" />
+                                </div>
+                                <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="pro"><h:commandButton value="Promotions" action="#{user.navU.promo()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cajaconte2">
+                        <div class="cajaconte2-1">
+                            <h1>Sales history:</h1>
+                        </div>
+                        <div class="cajaconte2-2">
+                            <div class="cajaconte2-2-1">
+                                <div class="espac1" />
+                                <p:dataTable class="table" styleClass="table table-hover" style="table" id="dtVentas" var="v" value="#{sale.buy.listV}" paginator="true" rows="8" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {NextPageLink} {LastPageLink}"
+                                             currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" pageLinks="5" >
+                                    <p:column headerText="Invoice No.">
+                                        <p:outputLabel value="#{v.numeroFactura}"></p:outputLabel>
+                                    </p:column>
+                                    <p:column headerText="Value">
+                                        <p:outputLabel value="#{v.valor}"></p:outputLabel>
+                                    </p:column>
+                                    <p:column headerText="Date">
+                                        <p:outputLabel value="#{v.fecha}"></p:outputLabel>
+                                    </p:column>
+                                </p:dataTable>
+                            </div>
+                        </div>
+                        <div class="cajaconte2-3">
+                            <div class="cajaconte2-3-1">
+                                <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#staticBackdrop">
+                                    <h:graphicImage value="#{resource['/img/reportes/pdf.png']}" />
+                                    <h:commandLink value=" Generate report in PDF">
+                                        <p:dataExporter type="pdf" target="dtVentas" fileName="ventas" pageOnly="true"/>
+                                    </h:commandLink>
+                                </button>
+                            </div>
+                            <div class="cajaconte2-3-1">
+                                <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#staticBackdrop">
+                                    <h:graphicImage value="#{resource['/img/reportes/excel.png']}" />
+                                    <h:commandLink value=" Generate report in Excel">
+                                        <p:dataExporter type="xls" target="dtVentas" fileName="ventas" pageOnly="true"/>
+                                    </h:commandLink>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cajafin4">
+                    <div class="cajafin4-1">
+                        <h:graphicImage value="#{resource['/img/Inicio/sicvos w.png']}" title="Logo sistema" alt="Responsive image" />
+                    </div>
+                    <div class="cajafin4-2">
+                        <h6>| David Leonardo Salcedo Sierra</h6>
+                        <h6>| Nixon Giovanny Pardo Téllez</h6>
+                        <h6>| Luis Alfredo Sarmiento Brango</h6>
+                        <h6>| SENA CSF, 1906818, GAES 3</h6>
+                        <h6>| © Copyright 2019, Bogotá DC, Colombia</h6>
+                    </div>
+                    <div class="cajafin4-3">
+                        <h:graphicImage value="#{resource['/img/Inicio/sena.png']}" title="Logo sena" alt="Responsive image" />
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+</html>
