@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | Assessment</title>
+	<h:outputStylesheet library="css" name="styles3rut.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="js" name="jquery-3.4.1.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}" />
+        
+    </h:head>
+    <h:body>
+        <div class="caja">
+            <div class="barraprin">
+                <div class="logo"></div>
+                <div class="logo1">
+                    <h:graphicImage value="#{resource['/img/Inicio/PRIN1e.jpg']}" class="img-fluid" title="Logo empresa" alt="Responsive image" />
+                </div>
+                <div class="logo"></div>
+            </div>
+            <h:form>
+            <div class="cajabar">
+                <div class="cajabar1">
+                    <nav class="navbar-center">
+                        <div class="navega">
+                            <ul>
+                                <li><a class=""><h:commandButton value="Home" action="#{user.navU.home()}" class="btn btn-sm btn-block" /></a></li>
+                                <li><a class=""><h:commandButton value="About Us" action="#{user.navU.about()}" class="btn btn-sm btn-block" /></a></li>
+                                <li><a class=""><h:commandButton value="Sales" action="#{sale.buy.sales()}" class="btn btn-sm btn-block" /></a></li>
+                                <li><a class=""><h:commandButton value="Inventories" action="#{inventory.stock.inventory()}" class="btn btn-sm btn-block" /></a></li>
+                                <li><a class="inici"><h:commandButton value="Assessment" action="#{service.nav.valore()}" class="btn btn-sm btn-block text-white" /></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="cajabar1 sticky-top">
+                    <div class="pos-f-t">
+                        <div class="collapse" id="navbarToggleExternalContent">
+                            <div class="p-3" style="background: #2A2627;">
+                                <h3 class="text-white h5">Profile of: <h:commandLink value="#{user.user.getpNombre()} #{user.user.getpApellido()}" action="#{user.user.profile()}" /></h3>
+                                <h:commandButton value="Sign off" action="#{user.navU.login()}" class="btn btn-danger" />
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-dark">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon" />
+                            </button>
+                            <h:commandButton value="Español" action="#{user.navU.homeen()}" class="btn btn-sm text-white" />
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            </h:form>
+            <div class="espac0" />
+            <div class="cajaconte">
+                <div class="cajaconte1">
+                    <h:form>
+                        <div class="cajaconte1-1">
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Servicios/result.png']}" alt="" />
+                                </div>
+                               <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="tma"><h:commandButton value="TMA" action="#{service.nav.valore()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                            <div class="espac1" />
+                            <div class="cajaconte1-1-1">
+                                <div class="cajaconte1-1-1-1">
+                                    <h:graphicImage value="#{resource['/img/Iconos/Servicios/gym.png']}" alt="" />
+                                </div>
+                               <div class="espac2" />
+                                <div class="cajaconte1-1-1-2">
+                                    <ul><li><ul><li>
+                                        <a class="rut"><h:commandButton value="Routine" action="#{service.nav.rutine()}" class="btn btn-sm btn-block text-white" /></a>
+                                    </li></ul></li></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+                <div class="cajaconte2">
+                    <div class="cajaconte2-1">
+                        <h1>Modify customer routine:</h1>
+                    </div>
+                    <h:form id="F-rutine">
+                        <div class="cajaconte2-2">
+                            <div class="cajaconte2-2-1">
+                                <div class="form-group">
+                                    <div class='form-row'>
+                                        <label for="formGroupExampleInput1">Please select the day you want to modify: </label>
+                                        <p:inputText class="form-control" value="#{service.rutina.cantidad}" id="formGroupExampleInput1" placeholder="" required="" />
+                                        <div class="espac1" />
+                                        <p:commandButton value="Consult" action="#{service.rutina.consultRutina()}" class="btn btn-danger col-md-2" update="ej"/>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <div class="form-row">
+                                        <p:accordionPanel id="ej" >
+                                            <p:tab title="Exercise 1: #{service.rutina.rutina.ejercicio1}">
+                                                <div class="card card-body">
+                                                <label for="InputExerci1">Enter your new exercise: </label>
+                                                <p:inputText value="#{service.rutina.ejercicio}" class="form-control" id="InputExerci1" required="" />
+                                                <br />
+                                                <label for="InputDescrip1">Description: </label>
+                                                <p:inputTextarea value="#{service.rutina.descripcion}" class="form-control" id="InputDescrip1" required="" />
+                                                <br />
+                                                <h:commandButton value="Accept" action="#{service.rutina.editRutina(1)}" class="btn btn-danger btn-block" />
+                                                </div>
+                                            </p:tab>
+                                            <p:tab title="Exercise 2: #{service.rutina.rutina.ejercicio2}" >
+                                                <div class="card card-body">
+                                                    <label for="InputExerci2">Enter your new exercise: </label>
+                                                    <p:inputText value="#{service.rutina.ejercicio2}" class="form-control" id="InputExerci2" required="" />
+                                                    <br />
+                                                    <label for="InputDescrip2">Description: </label>
+                                                    <p:inputTextarea value="#{service.rutina.descripcion2}" class="form-control" id="InputDescrip2" required="" />
+                                                    <br />
+                                                    <h:commandButton value="Accept" action="#{service.rutina.editRutina(2)}" class="btn btn-danger btn-block" />
+                                                </div>
+                                            </p:tab>
+                                            <p:tab title="Exercise 3: #{service.rutina.rutina.ejercicio3}" >
+                                                <div class="card card-body">
+                                                    <label for="InputExerci3">Enter your new exercise: </label>
+                                                    <p:inputText value="#{service.rutina.ejercicio3}" class="form-control" id="InputExerci3" required="" />
+                                                    <br />
+                                                    <label for="InputDescrip3">Description: </label>
+                                                    <p:inputTextarea value="#{service.rutina.descripcion3}" class="form-control" id="InputDescrip3" required="" />
+                                                    <br />
+                                                    <h:commandButton value="Accept" action="#{service.rutina.editRutina(3)}" class="btn btn-danger btn-block" />
+                                                </div>
+                                            </p:tab>
+                                            <p:tab title="Exercise 4: #{service.rutina.rutina.ejercicio4}" >
+                                                <div class="card card-body">
+                                                    <label for="InputExerci4">Enter your new exercise: </label>
+                                                    <p:inputText value="#{service.rutina.ejercicio4}" class="form-control" id="InputExerci4" required="" />
+                                                    <br />
+                                                    <label for="InputDescrip4">Description: </label>
+                                                    <p:inputTextarea value="#{service.rutina.descripcion4}" class="form-control" id="InputDescrip4" required="" />
+                                                    <br />
+                                                    <h:commandButton value="Accept" action="#{service.rutina.editRutina(4)}" class="btn btn-danger btn-block" />
+                                                </div>
+                                            </p:tab>
+                                            <p:tab title="Exercise 5: #{service.rutina.rutina.ejercicio5}" >
+                                                <div class="card card-body">
+                                                    <label for="InputExerci5">Enter your new exercise: </label>
+                                                    <p:inputText value="#{service.rutina.ejercicio5}" class="form-control" id="InputExerci5" required="" />
+                                                    <br />
+                                                    <label for="InputDescrip5">Description: </label>
+                                                    <p:inputTextarea value="#{service.rutina.descripcion5}" class="form-control" id="InputDescrip5" required="" />
+                                                    <br />
+                                                    <h:commandButton value="Accept" action="#{service.rutina.editRutina(5)}" class="btn btn-danger btn-block" />
+                                                </div>
+                                            </p:tab>
+                                            <p:tab title="Exercise 6: #{service.rutina.rutina.ejercicio6}" >
+                                                <div class="card card-body">
+                                                    <label for="InputExerci6">Enter your new exercise: </label>
+                                                    <p:inputText value="#{service.rutina.ejercicio6}" class="form-control" id="InputExerci6" required="" />
+                                                    <br />
+                                                    <label for="InputDescrip6">Description: </label>
+                                                    <p:inputTextarea value="#{service.rutina.descripcion6}" class="form-control" id="InputDescrip6" required="" />
+                                                    <br />
+                                                    <h:commandButton value="Accept" action="#{service.rutina.editRutina(6)}" class="btn btn-danger btn-block" />
+                                                </div>
+                                            </p:tab>
+                                            <p:tab title="Exercise 7: #{service.rutina.rutina.ejercicio7}" >
+                                                <div class="card card-body">
+                                                    <label for="InputExerci7">Enter your new exercise: </label>
+                                                    <p:inputText value="#{service.rutina.ejercicio7}" class="form-control" id="InputExerci7" required="" />
+                                                    <br />
+                                                    <label for="InputDescrip7">Description: </label>
+                                                    <p:inputTextarea value="#{service.rutina.descripcion7}" class="form-control" id="InputDescrip7" required="" />
+                                                    <br />
+                                                    <h:commandButton value="Accept" action="#{service.rutina.editRutina(7)}" class="btn btn-danger btn-block" />
+                                                </div>
+                                            </p:tab>
+                                            <p:tab title="Exercise 8: #{service.rutina.rutina.ejercicio8}" >
+                                                <div class="card card-body">
+                                                    <label for="InputExerci8">Enter your new exercise: </label>
+                                                    <p:inputText value="#{service.rutina.ejercicio8}" class="form-control" id="InputExerci8" required="" />
+                                                    <br />
+                                                    <label for="InputDescrip8">Description: </label>
+                                                    <p:inputTextarea value="#{service.rutina.descripcion8}" class="form-control" id="InputDescrip8" required="" />
+                                                    <br />
+                                                    <h:commandButton value="Accept" action="#{service.rutina.editRutina(8)}" class="btn btn-danger btn-block" />
+                                                </div>
+                                            </p:tab>
+                                            <p:tab title="Exercise 9: #{service.rutina.rutina.ejercicio9}" >
+                                                <div class="card card-body">
+                                                    <label for="InputExerci9">Enter your new exercise: </label>
+                                                    <p:inputText value="#{service.rutina.ejercicio9}" class="form-control" id="InputExerci9" required="" />
+                                                    <br />
+                                                    <label for="InputDescrip9">Description: </label>
+                                                    <p:inputTextarea value="#{service.rutina.descripcion9}" class="form-control" id="InputDescrip9" required="" />
+                                                    <br />
+                                                    <h:commandButton value="Accept" action="#{service.rutina.editRutina(9)}" class="btn btn-danger btn-block" />
+                                                </div>
+                                            </p:tab>
+                                        </p:accordionPanel>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>        
+            <div class="cajafin4">
+                <div class="cajafin4-1">
+                    <h:graphicImage value="#{resource['/img/Inicio/sicvos w.png']}" title="Logo sistema" alt="Responsive image" />
+                </div>
+                <div class="cajafin4-2">
+                    <h6>| David Leonardo Salcedo Sierra</h6>
+                    <h6>| Nixon Giovanny Pardo Téllez</h6>
+                    <h6>| Luis Alfredo Sarmiento Brango</h6>
+                    <h6>| SENA CSF, 1906818, GAES 3</h6>
+                    <h6>| © Copyright 2019, Bogotá DC, Colombia</h6>
+                </div>
+                <div class="cajafin4-3">
+                    <h:graphicImage value="#{resource['/img/Inicio/sena.png']}" title="Logo sena" alt="Responsive image" />
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
