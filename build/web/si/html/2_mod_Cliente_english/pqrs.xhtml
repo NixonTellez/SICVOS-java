@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | QCCS</title>
+	<h:outputStylesheet library="css" name="styles6.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="js" name="jquery-3.4.1.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}" />
+    </h:head>
+    <h:body>
+            <div class="caja">
+                <div class="barraprin">
+                    <div class="logo"></div>
+                    <div class="logo1">
+                        <h:graphicImage value="#{resource['/img/Inicio/PRIN1e.jpg']}" class="img-fluid" title="Logo empresa" alt="Responsive image" />
+                    </div>
+                    <div class="logo"></div>
+                </div>
+                <h:form>
+                <div class="cajabar sticky-top">
+                    <div class="cajabar1">
+                        <nav class="navbar-center">
+                            <div class="navega">
+                                <ul>
+                                    <li><a class=""><h:commandButton value="Home" action="#{user.navU.home()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="About Us" action="#{user.navU.about()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Services" action="#{service.rutina.cservices(user.user.id)}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class="inici"><h:commandButton value="QCCS" action="#{service.nav.pqrs()}" class="btn btn-sm btn-block text-white" /></a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="cajabar1">
+                        <div class="pos-f-t">
+                            <div class="collapse" id="navbarToggleExternalContent">
+                                <div class="p-3" style="background: #2A2627;">
+                                    <h3 class="text-white h5">Profile of: <h:commandLink value="#{user.user.getpNombre()} #{user.user.getpApellido()}" action="#{user.user.profile()}" /></h3>
+                                    <h:commandButton value="Sign off" action="#{user.navU.login()}" class="btn btn-danger" />
+                                </div>
+                            </div>
+                            <nav class="navbar navbar-dark">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon" />
+                                </button>
+                                <h:commandButton value="Español" action="#{user.navU.homeen()}" class="btn btn-sm text-white" />
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                </h:form>
+                <div class="espac0"></div>
+                <div class="cajaconte">
+                    <div class="cajaconte1">
+                        <h:form>
+                            <div class="cajaconte1-1">
+                                <div class="cajaconte1-1-1">
+                                    <div class="cajaconte1-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/PQRS/petition (1).png']}" alt="" />
+                                    </div>
+                                    <div class="espac2" />
+                                    <div class="cajaconte1-1-1-2">
+                                        <ul><li><ul><li>
+                                            <a class="pqrsp"><h:commandButton value="Question" action="#{service.nav.pqrs()}" class="btn btn-sm btn-block text-white" /></a>
+                                        </li></ul></li></ul>
+                                    </div>
+                                </div>
+                                <div class="espac1" />
+                                <div class="cajaconte1-1-1">
+                                    <div class="cajaconte1-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/PQRS/customer.png']}" alt="" />
+                                    </div>
+                                    <div class="espac2" />
+                                    <div class="cajaconte1-1-1-2">
+                                        <ul><li><ul><li>
+                                            <a class="pqrsq"><h:commandButton value="Complain" action="#{service.nav.queja()}" class="btn btn-sm btn-block text-white" /></a>
+                                        </li></ul></li></ul>
+                                    </div>
+                                </div>
+                                <div class="espac1" />
+                                <div class="cajaconte1-1-1">
+                                    <div class="cajaconte1-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/PQRS/refund.png']}" alt="" />
+                                    </div>
+                                    <div class="espac2" />
+                                    <div class="cajaconte1-1-1-2">
+                                        <ul><li><ul><li>
+                                            <a class="pqrsr"><h:commandButton value="Claim" action="#{service.nav.recla()}" class="btn btn-sm btn-block text-white" /></a>
+                                        </li></ul></li></ul>
+                                    </div>
+                                </div>
+                                <div class="espac1" />
+                                <div class="cajaconte1-1-1">
+                                    <div class="cajaconte1-1-1-1">
+                                        <h:graphicImage value="#{resource['/img/Iconos/PQRS/pro.png']}" alt="" />
+                                    </div>
+                                    <div class="espac2" />
+                                    <div class="cajaconte1-1-1-2">
+                                        <ul><li><ul><li>
+                                            <a class="pqrss"><h:commandButton value="Suggestion" action="#{service.nav.sugere()}" class="btn btn-sm btn-block text-white" /></a>
+                                        </li></ul></li></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </h:form>
+                    </div>
+                    <div class="cajaconte2">
+                        <div class="cajaconte2-1" />
+                        <h:form>
+                            <p:growl id="growl" life="5000" autoUpdate="true" />
+                        <div class="cajaconte2-2">
+                            <div class="cajaconte2-2-1">
+                                <h1>Question:</h1>
+                            </div>
+                            <div class="cajaconte2-2-2">
+                                <h3>Enter the date:</h3>
+                            </div>
+                            <div class="cajaconte2-2-3">
+                                <div class="form-group">
+                                    <p:inputText class="form-control" value="#{service.pqrs.fecha}" id="formGroupExampleInput3" type="date" placeholder="" required="" />
+                            </div>
+                            <div class="cajaconte2-2-4">
+                                <h3>Description:</h3>
+                            </div>
+                            <div class="cajaconte2-2-5">
+                                <h:inputTextarea class="barra1" cols="45" rows="4" value="#{service.pqrs.cliente.descripcion}" required="true" requiredMessage="Campo vacio" />
+                            </div>
+                            <div class="espac0" />
+                            <div class="cajaconte2-2-6">
+                                <div class="cajaconte2-2-6-1" />
+                                <div class="cajaconte2-2-6-1">
+                                    <h:commandButton value="Send" action="#{service.pqrs.addPQRS2(1, user.user.id)}" onclick="alert('You want to submit the question?');" class="btn btn-danger btn-lg btn-block"  />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cajaconte2-1" />
+                    </div>
+                    </h:form>
+                        <div class="cajaconte2-1" />
+                    </div>	
+                </div>
+                <div class="cajafin4">
+                    <div class="cajafin4-1">
+                        <h:graphicImage value="#{resource['/img/Inicio/sicvos w.png']}" title="Logo sistema" alt="Responsive image" />
+                    </div>
+                    <div class="cajafin4-2">
+                        <h6>| David Leonardo Salcedo Sierra</h6>
+                        <h6>| Nixon Giovanny Pardo Téllez</h6>
+                        <h6>| Luis Alfredo Sarmiento Brango</h6>
+                        <h6>| SENA CSF, 1906818, GAES 3</h6>
+                        <h6>| © Copyright 2019, Bogotá DC, Colombia</h6>
+                    </div>
+                    <div class="cajafin4-3">
+                        <h:graphicImage value="#{resource['/img/Inicio/sena.png']}" title="Logo sena" alt="Responsive image" />
+                    </div>
+                </div>
+            </div>
+    </h:body>
+</html>
