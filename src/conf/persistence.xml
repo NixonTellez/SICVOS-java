@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="SICVOSPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.modelo.Detalleventa</class>
+    <class>com.modelo.Maquina</class>
+    <class>com.modelo.Membresia</class>
+    <class>com.modelo.Novedad</class>
+    <class>com.modelo.Ordencompra</class>
+    <class>com.modelo.Pqrs</class>
+    <class>com.modelo.Producto</class>
+    <class>com.modelo.Rutina</class>
+    <class>com.modelo.Usuario</class>
+    <class>com.modelo.Valoracion</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://db-sicvos.ciim1pf1znkq.us-east-2.rds.amazonaws.com:3306/befree_gym?allowPublicKeyRetrieval=true&amp;useSSL=false"/>
+      <property name="javax.persistence.jdbc.user" value="admin"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="APMsyk6T0fzLroZj2EPd"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+  </persistence-unit>
+</persistence>
