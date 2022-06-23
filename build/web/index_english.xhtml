@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>BEFREE GYM | Home</title>
+	<h:outputStylesheet library="css" name="styles1.css" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css" />
+        
+        <h:outputScript library="js" name="jquery-3.4.1.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="popper.min.js" />
+        
+        <link rel="icon" href="#{resource['/img/Inicio/sicvos.png']}"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="caja">
+                <div class="barraprin">
+                    <div class="logo"></div>
+                    <div class="logo1">
+                        <h:graphicImage value="#{resource['/img/Inicio/PRIN1e.jpg']}" class="img-fluid" title="Company logo" alt="Responsive image" />
+                    </div>
+                    <div class="logo"></div>
+                </div>
+                <div class="cajabar sticky-top">
+                    <div class="cajabar1">
+                        <nav class="navbar-center">
+                            <div class="navega">
+                                <ul>
+                                    <li><a class="inici"><h:commandButton value="Home" action="#{user.navU.home()}" class="btn btn-sm btn-block text-white" /></a></li>
+                                    <li><a class=""><h:commandButton value="About us?" action="#{user.navU.about()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Services" action="#{service.nav.services()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="QCCS" action="#{service.nav.pqrs()}" class="btn btn-sm btn-block" /></a></li>
+                                    <li><a class=""><h:commandButton value="Log in" action="#{user.navU.login()}" class="btn btn-sm btn-block" /></a>
+                                        <ul>
+                                            <li><a class="reg"><h:commandButton value="Sign in" action="#{user.navU.registro()}" class="btn btn-sm btn-block" /></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><h:commandButton value="Español" action="#{user.navU.homeen()}" class="btn btn-sm btn-block text-white" /></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="cajaconte">
+                    <div class="cajaconte1">
+                        <div class="cajaconte1-1">
+                            <h1 responsive="">Welcome!</h1>
+                            <h2 responsive=""><marquee behavior="scroll">Befree is a sports conditioning center, here you will find a different space to the one offered in the area, improve your health and your physical appearance, we are family.</marquee></h2>
+                            <h3 responsive="">Join today and live a new experience.</h3>
+                            <br />
+                            <h4 responsive="">Take advantage of our plans from:</h4>
+                            <h2 responsive="">US$ 1,87 per training day.</h2>
+                            <h2 responsive="">Or you can choose: US$ 16,05 per month.</h2>
+                            <h2 responsive="">Come as a couple and pay: US$ 14,71 per person.</h2>
+                            <h2 responsive="">Get your ticket for only: US$ 8,02</h2>
+                        </div>
+                        <div class="cajaconte1-2">
+                            <div class="cajaconte1-2-1">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" />
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="1" />
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="2" />
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="3" />
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="4" />
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="5" />
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <h:graphicImage value="#{resource['img/Inicio/befree.jpg']}" class="d-block w-100" alt="" />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['img/Inicio/67958789_488927251677971_4449247645168304128_o.jpg']}" class="d-block w-100" alt="" />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['img/Inicio/78862888_574845409752821_2441597605361221632_o.jpg']}" class="d-block w-100" alt="" />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['img/Inicio/73120449_536172546953441_2954160497114480640_n.jpg']}" class="d-block w-100" alt="" />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['img/Inicio/75339443_541758626394833_1759132305663721472_o.jpg']}" class="d-block w-100" alt="" />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['img/Inicio/71650890_524109674826395_2234057385389850624_n.jpg']}" class="d-block w-100" alt="" />
+                                        </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true" />
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true" />
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>	
+                            <div class="cajaconte1-2-1">
+                                <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active" />
+                                        <li data-target="#carouselExampleIndicators1" data-slide-to="1" />
+                                        <li data-target="#carouselExampleIndicators1" data-slide-to="2" />
+                                        <li data-target="#carouselExampleIndicators1" data-slide-to="3" />
+                                        <li data-target="#carouselExampleIndicators1" data-slide-to="4" />
+                                        <li data-target="#carouselExampleIndicators1" data-slide-to="5" />
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <h:graphicImage value="#{resource['img/Inicio/1.jpg']}" class="d-block w-100" alt="" />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['img/Inicio/2.jpg']}" class="d-block w-100" alt="" />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['img/Inicio/55455434_416115885625775_3107508176954589184_o.jpg']}" class="d-block w-100" alt="" />
+                                        </div>				
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['img/Inicio/68638645_488858715018158_73928121014812672_o.jpg']}" class="d-block w-100" alt="" />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['img/Inicio/75439365_544618842775478_6012464570948386816_n.jpg']}" class="d-block w-100" alt="" />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <h:graphicImage value="#{resource['img/Inicio/79437382_579029299334432_7956655064502763520_o.jpg']}" class="d-block w-100" alt="" />
+                                        </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true" />
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true" />
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>	
+                        </div>
+                        <div class="cajaconte1-4">
+                            <ul>
+                                <li class="media my-4">
+                                    <h:graphicImage value="#{resource['img/Iconos/Personas/woman.png']}" class="mr-3" alt="..." />
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="https://www.facebook.com/CHECHY.MORYTHA?__tn__=%2CdlC-R-R&amp;eid=ARCPOXbD_jxOakixpOlCMvpT7ZZqtZteUl1McYLbSNC4-dtWJiMsprKEFM68ObvS3yDQstkQM0maziaG&amp;hc_ref=ARQWE_nN91RasPHz88m0NvYtkm-9z-Jt3hKABRusDX88u2dHodd-YYpgu3rJd7P_gcA">Lorena Kiroga</a></h5>
+                                        "Excellent space to reactivate physically and mentally... instructors that motivate. Thank you! Also the best gym in the area, there is no comparison."
+                                    </div>
+                                </li>
+                                <li class="media my-4">
+                                    <h:graphicImage value="#{resource['img/Iconos/Personas/man (2).png']}" class="mr-3" alt="..." />
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="https://www.facebook.com/carlosandres.duquezamogollon?__tn__=%2CdlC-R-R&amp;eid=ARDapAOLnqj0Ugpk5io8kNKa1Pwg2aeZWNnkoYuLaxmGnvE0Jdku64ozfybN-xFjTD4WuPbik1BiLCsV&amp;hc_ref=ARQgd-DmtrZkyx1wYe3JO6Yxf9d3pc3DcjpCEPjW-0-peQm89jIZobro0ZACIzlXUBg">Carlos Duqueza</a></h5>
+                                        5 stars.
+                                    </div>
+                                </li>
+                                <li class="media my-4">
+                                    <h:graphicImage value="#{resource['img/Iconos/Personas/woman (2).png']}" class="mr-3" alt="..." />
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="https://www.facebook.com/yomaira.martinez.14?__tn__=%2CdlC-R-R&amp;eid=ARDF1raD4YRMXbdht3tUtqa4VTx7dGEL2BgWb9bMrwXeUuinpAB66cHQGOJW0-ZyhoDWXTvGvabZSR0u&amp;hc_ref=ARQJ8pgJB2c0MonWo0RWWvZMKm1SJzWmI_seAHpkgpeUyvLEsgiXhce2JtfMOb-Wk48">Yomaira Martinez</a></h5>
+                                        "Excellent! they are a very professional team."
+                                    </div>
+                                </li>
+                                <li class="media my-4">
+                                    <h:graphicImage value="#{resource['img/Iconos/Personas/man.png']}" class="mr-3" alt="..." />
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="https://www.facebook.com/cesarjunior.sanchez?__tn__=%2CdlC-R-R&amp;eid=ARBc2FJ1GhiT52hD-hBi6KLo6wtJ01c8rlns9CkditBBTndtFBPpEyeiWphNAUkpcklMP15p6zJKwlsM&amp;hc_ref=ARSoTuZSopfY7ujtB6clPuwoAW9_QrHmGMixO4OhLP8R2F1Rnhxt8gifE8Hph1RK9mY">Cesar Junior Sanchez</a></h5><a href="" />
+                                        "Excellent gym, it has the best teachers, who keep you physically and mentally motivated to improve yourself in each workout."
+                                    </div>
+                                </li>
+                                <li class="media my-4">
+                                    <h:graphicImage value="#{resource['img/Iconos/Personas/man (1).png']}" class="mr-3" alt="..." />
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="https://www.facebook.com/cristhyandavid.castanedatejeda?__tn__=%2CdlC-R-R&amp;eid=ARCkzb-68w_dv5PfFPGZ_nwin1O6WLz0SACk6gqZynOCdVaDRxEEoXRN2AYC_8uajvjSYIxljm_lfKoX&amp;hc_ref=ARR0nQLF-LIHcvfjpFcfH1sdRVFOhHA_d_RfIBZ83LG1WREMdVCP88VvbLezkeOKdqA">Cristhyan David Castañeda Tejeda</a></h5>
+                                        "A lot of performance from the coaches."
+                                    </div>
+                                </li>
+                                <li class="media my-4">
+                                    <h:graphicImage value="#{resource['img/Iconos/Personas/woman (1).png']}" class="mr-3" alt="..." />
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="https://www.facebook.com/jenny.p.torres.79?__tn__=%2CdlC-R-R&amp;eid=ARBOVDbXI9QgRqck-cL3kZi0CMhOGBhOOnKdqeKjdPKbJMY2H5YL6Pkv06u2KHDmlUqZIJWfZgwl_04C&amp;hc_ref=ARQNFiCkNwIzGBAu-UJt9VffWAS8gwVLVo23msXIQwfcRPSwhoGQxCtvzKLdWUoUBic">Jenny Paola Mora Torres</a></h5>
+                                        "Super good, hard exercise but lots of warmth."
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cajaconte1-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nLiFADq5wx8" allowfullscreen="" />"&gt;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cajafin">	
+                    <div class="cajafin1">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.2245489510838!2d-74.094058285268!3d4.553583196691625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f989b9fa70f49%3A0x840ad0cb913333bb!2sBe%20Free%20GYM!5e0!3m2!1ses!2sco!4v1575395617147!5m2!1ses!2sco" allowfullscreen="" />
+                    </div>
+                    <div class="cajafin2">
+                        <a href="index.html"><h5>BEFREE GYM® Crossfit</h5></a>
+                        <a href="https://www.reebok.co/"><h6>Reebok®</h6></a>
+                        <a href="https://www.google.com/maps/place/Be+Free+GYM/@4.5535832,-74.0940583,17z/data=!3m1!4b1!4m5!3m4!1s0x8e3f989b9fa70f49:0x840ad0cb913333bb!8m2!3d4.5535832!4d-74.0918696?hl=es"><h6>● Address: Career. 4 Este # 37b - 38 South, Bogota, Colombia</h6></a>
+                        <h6>● Phone: 3672205</h6>
+                    </div>
+                    <div class="cajafin3">
+                        <h5>Follow us on Facebook:</h5>
+                        <a href="https://www.facebook.com/befreegymvictoria/"><h:graphicImage value="#{resource['img/Inicio/facebook.png']}" alt="" title="Facebook: Befree Gym" /></a>
+                        <div class="espac3" />
+                        <a href="https://www.facebook.com/profile.php?id=100007351306475"><h:graphicImage value="#{resource['img/Inicio/facebook.png']}" alt="" title="Brandon Andres Palencia" /></a>
+                    </div>
+                </div>
+            </div>
+        </h:form>  
+    </h:body>
+</html>
